@@ -2,28 +2,28 @@
 import Section from "../Section.astro"
 
 import { work } from "@cv"
+import { monthYear } from "@/utils/utils.ts"
 ---
 
-<Section title="Experiencia laboral">
+<Section title="Work Experience">
   <ul>
     {
       work.map(
-        ({ name, startDate, endDate, position, summary, highlights }) => {
-          const startYear = new Date(startDate).getFullYear()
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Actual"
-          const years = `${startYear} - ${endYear}`
-
+        ({ name, startDate, endDate, position, summary, url }) => {
+          const date = monthYear(startDate, endDate)
+          
           return (
             <li>
               <article>
                 <header>
                   <div>
-                    <h3>{name}</h3>
+                    <h3>
+                      <a class ="link-work" href={url} target="_blank">{name}</a>
+                    </h3>
                     <h4>{position}</h4>
                   </div>
 
-                  <time>{years}</time>
+                  <time>{date}</time>
                 </header>
 
                 <footer>
@@ -45,9 +45,14 @@ import { work } from "@cv"
     gap: 32px;
   }
 
-  article h3 {
+  article h3, .link-work {
     font-weight: 500;
     color: #111;
+    margin-bottom: 4px;
+  }
+
+  .link-work:hover {
+    text-decoration: underline;
   }
 
   article h4 {
