@@ -1,264 +1,291 @@
 {
-  "basics": {
-    "name": "Miguel Ángel Durán",
-    "label": "Full Stack Developer con más de 15 años de experiencia & Creador de Contenido de Programación",
-    "image": "/me.webp",
-    "email": "miduga@gmail.com",
-    "phone": "+34 688888888",
-    "url": "https://midu.dev",
-    "summary": "+15 años de experiencia como Desarrollador Web. Actualmente soy Creador de Contenido y Divulgador sobre Programación. Vivo en Barcelona, España. He trabajado en diferentes entornos: desde acelerar el desarrollo de start-ups hasta liderando equipos de empresas multinacionales.",
-    "location": {
-      "address": "",
-      "postalCode": "08820",
-      "city": "el Prat de Llobregat",
-      "countryCode": "ES",
-      "region": "España"
-    },
-    "profiles": [
-      {
-        "network": "LinkedIn",
-        "username": "midudev",
-        "url": "https://linkedin.com/in/midudev"
-      },
-      {
-      "network": "X",
-      "username": "midudev",
-      "url": "https://x.com/midudev"
-    },
-    {
-      "network": "GitHub",
-      "username": "midudev",
-      "url": "https://github.com/midudev"
-    }
-  ]
-  },
-  "work": [{
-    "name": "midudev",
-    "position": "Divulgador sobre Programación Web",
-    "url": "https://twitch.tv/midudev",
-    "startDate": "2021-01-01",
-    "endDate": null,
-    "summary": "Streamer de programación más visto en Español en Twitch. +1 millón de seguidores entre todas mis redes sociales. Reconocido por Google, Microsoft y GitHub por mi impacto en la comunidad de desarrolladores.",
-    "highlights": [
-      "Started the company"
-    ]
-  },
-  {
-    "name": "Adevinta",
-    "position": "Lead Frontend Architect",
-    "url": "https://twitch.tv/midudev",
-    "startDate": "2016-06-01",
-    "endDate": "2022-09-01",
-    "summary": "Lideré una convergencia técnica entre diferentes productos y migramos una arquitectura monolítica a otra más flexible y optimizada. Fomenté buenas prácticas y mejoras en la cultura de rendimiento, además de la entrega rápida de valor a los usuarios.",
-    "highlights": [
-      "Started the company"
-    ]
-  },
-  {
-    "name": "Hubii",
-    "position": "Senior FrontEnd Developer",
-    "startDate": "2011-03-01",
-    "endDate": "2016-05-01",
-    "summary": "Desarrollé una plataforma de noticias geolocalizadas y una API para consumir la información. Escalé los servicios para soportar la carga de más de cientos de miles de peticiones al día. Recorté los tiempos de entrega y despliegues a producción a la mitad. Colaboré con Mozilla y Telefónica para desarrollar la primera app para televisores con FirefoxOS.",
-    "highlights": [
-      "Started the company"
-    ]
-  }],
-  "volunteer": [{
-    "organization": "Organization",
-    "position": "Volunteer",
-    "url": "https://organization.com/",
-    "startDate": "2012-01-01",
-    "endDate": "2013-01-01",
-    "summary": "Description…",
-    "highlights": [
-      "Awarded 'Volunteer of the Month'"
-    ]
-  }],
-  "education": [{
-    "institution": "Universitat Oberta de Catalunya",
-    "url": "https://www.uoc.edu/portal/es/index.html",
-    "area": "Ingeniero de Software",
-    "studyType": "Bachelor",
-    "startDate": "2003-01-01",
-    "endDate": "2009-01-01",
-    "score": "4.0",
-    "courses": [
-      "DB1101 - Basic SQL"
-    ]
-  }],
-  "awards": [{
-    "title": "Award",
-    "date": "2014-11-01",
-    "awarder": "Company",
-    "summary": "There is no spoon."
-  }],
-  "certificates": [{
-    "name": "Certificate",
-    "date": "2021-11-07",
-    "issuer": "Company",
-    "url": "https://certificate.com"
-  }],
-  "publications": [{
-    "name": "Publication",
-    "publisher": "Company",
-    "releaseDate": "2014-10-01",
-    "url": "https://publication.com",
-    "summary": "Description…"
-  }],
-  "skills": [
-      {
-        "name": "HTML",
-        "level": "Master",
-        "keywords": [
-          "Desarrollo Web", "Frontend"
-        ]
-      },
-      {
-        "name": "CSS",
-        "level": "Master",
-        "keywords": [
-          "Desarrollo Web", "Frontend", "Diseño Responsive"
-        ]
-      },
-      {
-        "name": "JavaScript",
-        "level": "Master",
-        "keywords": [
-          "Desarrollo Web", "Frontend", "Backend", "Fullstack"
-        ]
-      },
-      {
-        "name": "Tailwind",
-        "level": "Avanzado",
-        "keywords": [
-          "Desarrollo Web", "Frontend", "CSS Framework", "Diseño Responsive"
-        ]
-      },
-      {
-        "name": "TypeScript",
-        "level": "Avanzado",
-        "keywords": [
-          "Desarrollo Web", "Frontend", "Backend", "JavaScript Superset"
-        ]
-      },
-      {
-        "name": "Node",
-        "level": "Avanzado",
-        "keywords": [
-          "Desarrollo Web", "Backend", "JavaScript", "Servidor"
-        ]
-      },
-      {
-        "name": "MySQL",
-        "level": "Avanzado",
-        "keywords": [
-          "Bases de Datos", "SQL", "Almacenamiento de Datos", "Backend"
-        ]
-      },
-      {
-        "name": "Git",
-        "level": "Avanzado",
-        "keywords": [
-          "Control de Versiones", "Colaboración", "Código Fuente"
-        ]
-      },
-      {
-        "name": "GitHub",
-        "level": "Avanzado",
-        "keywords": [
-          "Control de Versiones", "Colaboración", "Código Fuente", "Git"
-        ]
-      },
-      {
-        "name": "Next.js",
-        "level": "Avanzado",
-        "keywords": [
-          "Desarrollo Web", "Frontend", "React Framework", "SSR", "Static Generation"
-        ]
-      },
-      {
-        "name": "React",
-        "level": "Avanzado",
-        "keywords": [
-          "Desarrollo Web", "Frontend", "JavaScript Library", "UI"
-        ]
-      }
-    ],
-  "languages": [{
-    "language": "Spanish",
-    "fluency": "Native speaker"
-  }, {
-    "language": "English",
-    "fluency": "Advanced"
-  }],
-  "interests": [{
-    "name": "Wildlife",
-    "keywords": [
-      "Ferrets",
-      "Unicorns"
-    ]
-  }],
-  "references": [{
-    "name": "Jane Doe",
-    "reference": "Reference…"
-  }],
-  "projects": [
-    {
-    "name": "mars.codes",
-    "isActive": true,
-    "description": "Historia interactiva con retos de programación para viajar a Marte",
-    "highlights": [
-      "Elige tu propia aventura",
-      "En desarrollo"
-    ],
-    "url": "https://mars.codes"
-  }, {
-    "name": "AdventJS",
-    "isActive": true,
-    "description": "Retos de programación en JavaScript para cada día de diciembre hasta Navidad",
-    "highlights": [
-      "+1 millón de visitas",
-      "Multidioma",
-      "JavaScript & TypeScript"
-    ],
-    "url": "https://adventjs.dev"
-  }, {
-    "name": "Codember",
-    "isActive": true,
-    "description": "Juego interactivo de programación con retos y secretos",
-    "highlights": [
-      "+2000 usuarios activos",
-      "Retos para cualquier lenguaje"
-    ],
-    "url": "https://codember.dev"
-  }, {
-    "name": "codi.link",
-    "isActive": true,
-    "description": "Playground de código HTML, CSS y JavaScript para compartir",
-    "highlights": [
-      "100k visitas al mes",
-      "Desarrollado por la comunidad"
-    ],
-    "url": "https://codi.link",
-    "github": "https://github.com/midudev/codi.link"
-  }, {
-    "name": "Pruebas Técnicas",
-    "isActive": true,
-    "description": "Lista de pruebas técnicas de empresas para practicar programación",
-    "highlights": [
-      "100% gratuito",
-      "+500 soluciones de la comunidad"
-    ],
-    "url": "https://pruebastecnicas.com",
-    "github": "https://github.com/midudev/codi.link"
-  }, {
-    "name": "miduConf",
-    "description": "Conferencia de programación en streaming para la comunidad hispanohablante con charlas top",
-    "highlights": [
-      "+15k tickets repartidos",
-      "+50k espectadores en directo"
-    ],
-    "url": "https://miduconf.com"
-  }]
+	"basics": {
+		"name": "Emanuel Romero",
+		"label": "Backend Developer",
+		"image": "/me.webp",
+		"email": "e.romero.1989@gmail.com",
+		"summary": "I am passionate about programming and developing effective solutions. I am an organized and capable person, which allows me to work efficiently on projects. I am committed to my growth and evolution, as well as to the work team. My main goal is to be an outstanding professional in the IT area, able to face and solve any challenge that may arise.",
+		"location": {
+			"postalCode": "1824",
+			"city": "Lanús",
+			"countryCode": "AR",
+			"region": "Argentina"
+		},
+		"profiles": [
+			{
+				"network": "LinkedIn",
+				"username": "ema14bdt",
+				"url": "https://linkedin.com/in/ema14bdt"
+			},
+			{
+				"network": "GitHub",
+				"username": "ema14bdt",
+				"url": "https://github.com/ema14bdt"
+			}
+		]
+	},
+	"work": [
+		{
+			"name": "Ministerio Público Fiscal de la Nación",
+			"position": "Full Stack Developer",
+			"url": "https://www.mpf.gob.ar/",
+			"startDate": "2023-07-01",
+			"endDate": null,
+			"summary": "Backend and frontend development of internal web application for information management. Technologies used: Django, VueJS, PostgreSQL."
+		},
+		{
+			"name": "IT Rock",
+			"position": "Backend Developer",
+			"url": "https://itrock.com.ar/",
+			"startDate": "2021-12-01",
+			"endDate": "2023-07-01",
+			"summary": "Backend development of web applications, administration systems, exposure, and documentation of APIs. Technologies used: PHP, Javascript, JQuery, Python, Laravel, Django, FastAPI, Docker, SQL, among others."
+		}
+	],
+	"education": [
+		{
+			"institution": "Digital House",
+			"url": "https://drive.google.com/file/d/1OjBHxQIiFDHzQzI8xmwGBhPgMCqu8Xju/view?usp=drive_link",
+			"area": "Full Stack NodeJS Web Developer",
+			"studyType": "Course",
+			"startDate": "2021-04-01",
+			"endDate": "2021-11-01"
+		},
+		{
+			"institution": "Universidad Nacional de Salta",
+			"url": "https://drive.google.com/file/d/1mYZQDbYuadoJQAyGlrtoOwh1H1aZQRKA/view?usp=drive_link",
+			"area": "Data Science introduction",
+			"studyType": "Course",
+			"startDate": "2023-07-01",
+			"endDate": "2023-11-01"
+		},
+		{
+			"institution": "Municipio de Lanús",
+			"area": "English for programmers",
+			"studyType": "Course",
+			"startDate": "2022-03-01",
+			"endDate": "2022-11-01"
+		}
+	],
+	"skills": [
+		{
+			"name": "HTML",
+			"level": "Avanzado",
+			"keywords": [
+				"Desarrollo Web",
+				"Frontend"
+			]
+		},
+		{
+			"name": "CSS",
+			"level": "Avanzado",
+			"keywords": [
+				"Desarrollo Web",
+				"Frontend",
+				"Diseño Responsive"
+			]
+		},
+		{
+			"name": "JavaScript",
+			"level": "Avanzado",
+			"keywords": [
+				"Desarrollo Web",
+				"Frontend",
+				"Backend",
+				"Fullstack"
+			]
+		},
+		{
+			"name": "Node",
+			"level": "Avanzado",
+			"keywords": [
+				"Desarrollo Web",
+				"Backend",
+				"JavaScript",
+				"Servidor"
+			]
+		},
+		{
+			"name": "SQL",
+			"level": "Avanzado",
+			"keywords": [
+				"Bases de Datos",
+				"MySQL",
+				"PostgreSQL",
+				"Almacenamiento de Datos",
+				"Backend"
+			]
+		},
+		{
+			"name": "Git",
+			"level": "Avanzado",
+			"keywords": [
+				"Control de Versiones",
+				"Colaboración",
+				"Código Fuente"
+			]
+		},
+		{
+			"name": "PHP",
+			"level": "Avanzado",
+			"keywords": [
+				"Desarrollo Web",
+				"Frontend",
+				"Backend"
+			]
+		},
+		{
+			"name": "Laravel",
+			"level": "Avanzado",
+			"keywords": [
+				"Desarrollo Web",
+				"Backend",
+				"PHP",
+				"Servidor"
+			]
+		},
+		{
+			"name": "Python",
+			"level": "Avanzado",
+			"keywords": [
+				"Desarrollo Web",
+				"Backend",
+				"Fullstack"
+			]
+		},
+		{
+			"name": "Django",
+			"level": "Avanzado",
+			"keywords": [
+				"Desarrollo Web",
+				"Backend",
+				"Python",
+				"Servidor"
+			]
+		},
+		{
+			"name": "FastAPI",
+			"level": "Avanzado",
+			"keywords": [
+				"Desarrollo Web",
+				"Backend",
+				"Python",
+				"Servidor"
+			]
+		}
+	],
+	"languages": [
+		{
+			"language": "Spanish",
+			"fluency": "Native speaker"
+		},
+		{
+			"language": "English",
+			"fluency": "Advanced"
+		}
+	],
+	"projects": [
+		{
+			"name": "Agro América Emprende",
+			"isActive": true,
+			"description": "An interactive platform connecting agricultural entrepreneurs with investors or companies.",
+			"highlights": [
+				"Laravel",
+				"Backoffice"
+			],
+			"url": "https://agroemprende.iica.int/"
+		},
+		{
+			"name": "Amigos de la Casa",
+			"isActive": true,
+			"description": "Benefits club for Fullescabio customers, offering multiple brands and discounts.",
+			"highlights": [
+				"Laravel",
+				"Backoffice"
+			],
+			"url": "https://www.amigosdelacasa.com/"
+		},
+		{
+			"name": "AVP Intra",
+			"isActive": true,
+			"description": "Platform for a neighborhood to process service information, common documents, and regulations.",
+			"highlights": [
+				"FastAPI",
+				"Pandas"
+			],
+			"url": "https://avp-api-dev.puertos.ar/docs"
+		},
+		{
+			"name": "Club Qualia",
+			"isActive": true,
+			"description": "Benefits club for Qualia insurance clients, offering multiple brands and discounts.",
+			"highlights": [
+				"Laravel",
+				"Backoffice"
+			],
+			"url": "https://club.qualiaseguros.com/"
+		},
+		{
+			"name": "Fenomenautas",
+			"isActive": true,
+			"description": "Fenomenautas connects teachers and scientists, offering a platform to share and access innovative educational proposals that often stay within classrooms.",
+			"highlights": [
+				"Frontend",
+				"Backend",
+				"Laravel"
+			],
+			"url": "https://www.fenomenautas.org/"
+		},
+		{
+			"name": "Parador Túristico Quimilí",
+			"isActive": true,
+			"description": "The ideal spot for travelers seeking comfort and comprehensive services, offering a wide range of amenities to meet their needs.",
+			"highlights": [
+				"Wordpress",
+				"Freelance"
+			],
+			"url": "https://paradorturisticoquimili.com/"
+		},
+		{
+			"name": "Silicon Access",
+			"isActive": true,
+			"description": "Developed a system for managing gated communities, including resident, visitor, and pet administration..",
+			"highlights": [
+				"Django",
+				"Backoffice"
+			],
+			"url": "https://silicon-access.com/"
+		},
+		{
+			"name": "Tienda Mi Olivo",
+			"isActive": false,
+			"description": "Store selling regional products from all over Argentina.",
+			"highlights": [
+				"Wordpress",
+				"WooCommerce",
+				"Freelance"
+			]
+		},
+		{
+			"name": "Wendrop",
+			"isActive": false,
+			"description": "Wendrop is a place to share free information, tools, and helpful resources in the world of NFT and cryptocurrencies.",
+			"highlights": [
+				"Laravel",
+				"NFT",
+				"OpenSea"
+			],
+			"url": "https://www.wendrop.io/"
+		},
+		{
+			"name": "***",
+			"isActive": false,
+			"description": "National system for managing case files, prosecutor's offices, and rulings.",
+			"highlights": [
+				"Django",
+				"Celery",
+				"VUE"
+			]
+		}
+	]
 }
