@@ -1,7 +1,72 @@
 ---
 import Section from "../Section.astro"
+
+import { education } from "@cv"
+
+import { monthYear } from "@/utils/utils.ts"
 ---
 
 <Section title="Education">
-  <p>Hola mundo</p>
+  <ul>
+    {
+      education.map(({ institution, startDate, endDate, area, url }) => {
+        const date = monthYear(startDate, endDate)
+
+        return (
+          <li>
+            <article>
+              <header>
+                <div>
+                  <h3>{institution}</h3>
+                  <h4>
+                    {
+                      url
+                        ? <a class ="link-education" href={url} target="_blank">{area}</a>
+                        : <span>{area}</span>
+                    }
+                  </h4>
+                </div>
+                <time>{date}</time>
+              </header>
+            </article>
+          </li>
+        )
+      })
+    }
+  </ul>
 </Section>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  article h3 {
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 4px;
+  }
+
+  article h4, .link-education {
+    color: #222;
+    font-weight: 400;
+  }
+
+  .link-education:hover {
+    text-decoration: underline;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  time {
+    color: #555;
+    font-size: 0.85rem;
+  }
+</style>
