@@ -11,6 +11,9 @@ dependencies:
   astro:
     specifier: ^4.2.7
     version: 4.2.7(typescript@5.3.3)
+  darkmode-js:
+    specifier: ^1.5.7
+    version: 1.5.7
   ninja-keys:
     specifier: ^1.2.2
     version: 1.2.2
@@ -1321,6 +1324,10 @@ packages:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
     hasBin: true
+    dev: false
+
+  /darkmode-js@1.5.7:
+    resolution: {integrity: sha512-gM1KhV/yy/84ZUpES9/oeOn0CVtuOi2HBd+Kccr4CJz+rFccQo2gUuPbjfyPXUx7t800Zf408G6kZb5rkTgjFA==}
     dev: false
 
   /debug@2.6.9:
