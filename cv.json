@@ -1,7 +1,7 @@
 {
 	"basics": {
 		"name": "Emanuel Romero",
-		"label": "Backend Developer",
+		"label": "Web Developer",
 		"image": "/me.webp",
 		"email": "e.romero.1989@gmail.com",
 		"summary": "I am passionate about programming and developing effective solutions. I am an organized and capable person, which allows me to work efficiently on projects. I am committed to my growth and evolution, as well as to the work team. My main goal is to be an outstanding professional in the IT area, able to face and solve any challenge that may arise.",
@@ -14,13 +14,15 @@
 		"profiles": [
 			{
 				"network": "LinkedIn",
-				"username": "ema14bdt",
 				"url": "https://linkedin.com/in/ema14bdt"
 			},
 			{
 				"network": "GitHub",
-				"username": "ema14bdt",
 				"url": "https://github.com/ema14bdt"
+			},
+			{
+				"network": "CV",
+				"url": "https://drive.google.com/file/d/1W_ZGCB-CPAZ45ejX5maFEjnTjLmQ1Dfx/view?usp=drive_link"
 			}
 		]
 	},
@@ -67,6 +69,117 @@
 			"endDate": "2022-11-01"
 		}
 	],
+	"certificates": [
+    {
+        "name": "Data Science Bootcamp with Azure",
+        "date": "2024-08-01",
+        "issuer": "Código Facilito",
+        "url": "https://drive.google.com/file/d/1LMMSvPDN5aCFn2ZxyYEBdGJ369kIhKA1/view?usp=sharing"
+    },
+    {
+        "name": "Data Science Bootcamp",
+        "date": "2023-11-01",
+        "issuer": "Código Facilito",
+        "url": "https://drive.google.com/file/d/1nPtsK9TPkn3NLvRiI5tAkMDJHS9QgXNF/view?usp=sharing"
+    },
+    {
+        "name": "FastAPI Course: Database, Modularization, and Production Deployment",
+        "date": "2022-12-01",
+        "issuer": "Platzi",
+        "url": "https://drive.google.com/file/d/1ivGSNw9P0NKgM6nGcR5jwMRgMX29BX3k/view?usp=sharing"
+    },
+    {
+        "name": "FastAPI Course: Fundamentals, Paths, Operations & Validations",
+        "date": "2022-12-01",
+        "issuer": "Platzi",
+        "url": "https://drive.google.com/file/d/1meCHQfH3l98SIM1PBUIhvUAio0yGCTZ8/view?usp=sharing"
+    },
+    {
+        "name": "FastAPI Course: Modularization, Data, and Errors",
+        "date": "2022-12-01",
+        "issuer": "Platzi",
+        "url": "https://drive.google.com/file/d/1D-0UMrBKwizxuHDs0tGdrhTQ1JF1Oxar/view?usp=sharing"
+    },
+    {
+        "name": "EF SET English Certificate 73/100 (C2 Proficient)",
+        "date": "2022-07-01",
+        "issuer": "EF Standard English Test (EF SET)",
+        "url": "https://www.efset.org/cert/aXug7q"
+    },
+    {
+        "name": "Creating Online Stores with WooCommerce",
+        "date": "2022-06-01",
+        "issuer": "Platzi",
+        "url": "https://drive.google.com/file/d/1ZojO7yTpFUtytNj_rLdLxOend3D5bcIn/view?usp=sharing"
+    },
+    {
+        "name": "REST API with PHP",
+        "date": "2022-02-01",
+        "issuer": "Platzi",
+        "url": "https://drive.google.com/file/d/1FFMEetGGrr4HpWZRrXIRkpQM81niLswu/view?usp=sharing"
+    },
+    {
+        "name": "Asynchronous JavaScript",
+        "date": "2022-02-01",
+        "issuer": "Platzi",
+        "url": "https://drive.google.com/file/d/1J-yo5y7RpZ1LCQW4ycKaqv7GQxNf5hEe/view?usp=sharing"
+    },
+    {
+        "name": "Compiling JavaScript Applications with TypeScript",    
+        "date": "2022-02-01",
+        "issuer": "Microsoft Learning 365",
+        "url": "https://drive.google.com/file/d/1yMLohp9oCQsdONAJXIpppj9DYUE4FTmg/view?usp=sharing"
+    },
+    {
+        "name": "Getting Started with VueJS",
+        "date": "2022-02-01",
+        "issuer": "Microsoft Learning 365",
+        "url": "https://drive.google.com/file/d/1vomNv-Rwqu0Cm_k3l5sWhXPye5LJhyGK/view?usp=sharing"
+    },
+    {
+        "name": "Object-Oriented Programming with PHP",
+        "date": "2022-02-01",
+        "issuer": "Platzi",
+        "url": "https://drive.google.com/file/d/1W9AYoXTHte0k0q2oZhFtyF3_Sypus7e3/view?usp=sharing"
+    },
+    {
+        "name": "Basic Data Handling with Laravel and Eloquent ORM",
+        "date": "2022-01-01",
+        "issuer": "Platzi",
+        "url": "https://drive.google.com/file/d/1S96E-To80iep8Lwe7oPX2CsvwSImcRxq/view?usp=sharing"
+    },
+    {
+        "name": "SPA in Laravel with Inertia and VueJS",
+        "date": "2022-01-01",
+        "issuer": "Platzi",
+        "url": "https://drive.google.com/file/d/1_Vc7vNimlb_0K3Z0kEDkJbfFsGQk4ab6/view?usp=sharing"
+    },
+    {
+        "name": "REST API with Laravel",
+        "date": "2021-12-01",
+        "issuer": "Platzi",
+        "url": "https://drive.google.com/file/d/1tEKMbl57gODctOBaDNfl0zrQPGL-i-CI/view?usp=sharing"
+    },
+    {
+        "name": "Learn SQL from Scratch",
+        "date": "2021-11-01",
+        "issuer": "Udemy",
+        "url": "https://drive.google.com/file/d/1gTqZBEz-K7BxPFT7IV8R05ufOEQspNhd/view?usp=drivesdk"
+    },
+    {
+        "name": "English for Software Development",
+        "date": "2021-10-01",
+        "issuer": "Polo TIC Misiones",
+        "url": "https://drive.google.com/file/d/1j2rBo598qv77RUMPZDI7mKV-xcZXjqVQ/view?usp=sharing"
+    },
+    {
+        "name": "English for Software Development",
+        "date": "2021-07-01",
+        "issuer": "Polo TIC Misiones",
+        "url": "https://drive.google.com/file/d/14JiiEKr26zsgYoUzY21zJajwtEvq0p9m/view?usp=sharing"
+    }
+	],
+
 	"skills": [
 		{
 			"name": "HTML",

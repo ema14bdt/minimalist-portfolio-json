@@ -1,0 +1,134 @@
+---
+import Section from "../Section.astro"
+
+import { certificates } from "@cv"
+
+import { month } from "@/utils/utils.ts"
+
+const firstThreeCertificates = certificates.slice(0, 3)
+const extraCertificates = certificates.slice(3)
+---
+
+<Section title="Certificates">
+  <ul>
+    {
+      firstThreeCertificates.map(({ name, date, issuer, url }) => {
+        const dateCertificate = month(date);
+        return (
+          <li>
+            <article>
+              <header>
+                <div>
+                  <h4>
+                    <a class="link-certificate" href={url} target="_blank">{name}</a>
+                  </h4>
+                </div>
+                <time>{dateCertificate}</time>
+              </header>
+              <footer>
+                <p>{issuer}</p>
+              </footer>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  <ul id="extra-certificates" class="hidden">
+    {
+      extraCertificates.map(({ name, date, issuer, url }) => {
+        const dateCertificate = month(date);
+        return (
+          <li>
+            <article>
+              <header>
+                <div>
+                  <h4>
+                    <a class="link-certificate" href={url} target="_blank">{name}</a>
+                  </h4>
+                </div>
+                <time>{dateCertificate}</time>
+              </header>
+              <footer>
+                <p>{issuer}</p>
+              </footer>
+            </article>
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  <button id="button-more">
+    <p class="more">+{extraCertificates.length} more</p>
+  </button>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttonMore = document.getElementById('button-more');
+      const extraCertificates = document.getElementById('extra-certificates');
+      const moreText = buttonMore?.querySelector('.more');
+
+      if (buttonMore && extraCertificates && moreText) {
+        buttonMore.addEventListener('click', () => {
+          extraCertificates.classList.toggle('hidden');
+
+          moreText.textContent = extraCertificates.classList.contains('hidden')
+            ? `+${extraCertificates.children.length} more`
+            : '- less';
+        });
+      }
+    });
+  </script>
+</Section>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    color: #555;
+    font-weight: 500;
+  }
+
+  article h3 {
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 4px;
+  }
+
+  article h4, .link-certificate {
+    color: #222;
+    font-weight: 400;
+  }
+
+  .link-education:hover {
+    text-decoration: underline;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+
+  time {
+    color: #555;
+    font-size: 0.85rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
