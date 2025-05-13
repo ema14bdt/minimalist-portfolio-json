@@ -339,6 +339,17 @@
 			"url": "https://club.qualiaseguros.com/"
 		},
 		{
+			"name": "Dosuna",
+			"isActive": true,
+			"description": "Mountain products store.",
+			"highlights": [
+				"Wordpress",
+				"WooCommerce",
+				"Freelance"
+			],
+			"url": "https://dosuna.com.ar/"
+		},
+		{
 			"name": "Fenomenautas",
 			"isActive": true,
 			"description": "Fenomenautas connects teachers and scientists, offering a platform to share and access innovative educational proposals that often stay within classrooms.",
@@ -350,6 +361,28 @@
 			"url": "https://www.fenomenautas.org/"
 		},
 		{
+			"name": "Inka",
+			"isActive": true,
+			"description": "Sales of Crafts, design and culture Argentina.",
+			"highlights": [
+				"Wordpress",
+				"WooCommerce",
+				"Freelance"
+			],
+			"url": "https://inkatienda.com/"
+		},
+		{
+			"name": "LB-Art Design",
+			"isActive": true,
+			"description": "Sales of T-shirts and art-related sweatshirts and coveralls.",
+			"highlights": [
+				"Wordpress",
+				"WooCommerce",
+				"Freelance"
+			],
+			"url": "https://lb-artdesign.com/"
+		},
+		{
 			"name": "Parador Túristico Quimilí",
 			"isActive": true,
 			"description": "The ideal spot for travelers seeking comfort and comprehensive services, offering a wide range of amenities to meet their needs.",
@@ -358,6 +391,17 @@
 				"Freelance"
 			],
 			"url": "https://paradorturisticoquimili.com/"
+		},
+		{
+			"name": "Química Paso del Rey",
+			"isActive": true,
+			"description": "Sale of chemical cleaning products.",
+			"highlights": [
+				"Wordpress",
+				"WooCommerce",
+				"Freelance"
+			],
+			"url": "https://quimicapasodelrey.com.ar/"
 		},
 		{
 			"name": "Silicon Access",
