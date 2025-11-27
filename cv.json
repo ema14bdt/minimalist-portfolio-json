@@ -184,6 +184,7 @@
 		{
 			"name": "HTML",
 			"level": "Avanzado",
+            "category": "Languages",
 			"keywords": [
 				"Desarrollo Web",
 				"Frontend"
@@ -192,6 +193,7 @@
 		{
 			"name": "CSS",
 			"level": "Avanzado",
+            "category": "Languages",
 			"keywords": [
 				"Desarrollo Web",
 				"Frontend",
@@ -201,6 +203,7 @@
 		{
 			"name": "JavaScript",
 			"level": "Avanzado",
+            "category": "Languages",
 			"keywords": [
 				"Desarrollo Web",
 				"Frontend",
@@ -211,6 +214,7 @@
 		{
 			"name": "Node",
 			"level": "Avanzado",
+            "category": "Frameworks & Libraries",
 			"keywords": [
 				"Desarrollo Web",
 				"Backend",
@@ -221,6 +225,7 @@
 		{
 			"name": "SQL",
 			"level": "Avanzado",
+            "category": "Languages",
 			"keywords": [
 				"Bases de Datos",
 				"MySQL",
@@ -230,17 +235,9 @@
 			]
 		},
 		{
-			"name": "Git",
-			"level": "Avanzado",
-			"keywords": [
-				"Control de Versiones",
-				"Colaboración",
-				"Código Fuente"
-			]
-		},
-		{
 			"name": "PHP",
 			"level": "Avanzado",
+            "category": "Languages",
 			"keywords": [
 				"Desarrollo Web",
 				"Frontend",
@@ -250,6 +247,7 @@
 		{
 			"name": "Laravel",
 			"level": "Avanzado",
+            "category": "Frameworks & Libraries",
 			"keywords": [
 				"Desarrollo Web",
 				"Backend",
@@ -260,6 +258,7 @@
 		{
 			"name": "Python",
 			"level": "Avanzado",
+            "category": "Languages",
 			"keywords": [
 				"Desarrollo Web",
 				"Backend",
@@ -269,6 +268,7 @@
 		{
 			"name": "Django",
 			"level": "Avanzado",
+            "category": "Frameworks & Libraries",
 			"keywords": [
 				"Desarrollo Web",
 				"Backend",
@@ -279,6 +279,7 @@
 		{
 			"name": "FastAPI",
 			"level": "Avanzado",
+            "category": "Frameworks & Libraries",
 			"keywords": [
 				"Desarrollo Web",
 				"Backend",
@@ -289,6 +290,7 @@
 		{
 			"name": "Vue",
 			"level": "Intermedio",
+            "category": "Frameworks & Libraries",
 			"keywords": [
 				"Desarrollo Web",
 				"Frontend",

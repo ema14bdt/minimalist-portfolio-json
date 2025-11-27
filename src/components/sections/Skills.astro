@@ -2,21 +2,49 @@
 import Section from "../Section.astro"
 
 import { skills } from "@cv"
+
+const skillsByCategory = skills.reduce((acc, skill) => {
+  const category = (skill as any).category || "Other";
+  if (!acc[category]) acc[category] = [];
+  acc[category].push(skill);
+  acc[category].sort((a, b) => a.name.localeCompare(b.name));
+  return acc;
+}, {} as Record<string, any[]>);
 ---
 
 <Section title="Skills">
-  <ul>
-    {
-      skills.map(({ name }) => (
-        <li>
-          <span>{name}</span>
-        </li>
-      ))
-    }
-  </ul>
+  {
+    Object.entries(skillsByCategory).map(([category, categorySkills]) => (
+      <div class="skills-category">
+        <h3>{category}</h3>
+        <ul>
+          {categorySkills.map(({ name }) => (
+            <li>
+              <span>{name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
 </Section>
 
 <style>
+  .skills-category {
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-category:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--color-text);
+  }
+
   ul {
     display: inline-flex;
     gap: var(--spacing-sm);
