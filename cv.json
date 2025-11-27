@@ -70,6 +70,12 @@
 		}
 	],
 	"certificates": [
+	{
+		"name": "Professional Full Stack Web Developer",
+		"date": "2025-08-01",
+		"issuer": "ForIT Software Factory",
+		"url": "https://drive.google.com/file/d/1kamVUnE2OhnkDn6CbSdT7FxGSzYt5fMW/view?usp=sharing"
+	},
     {
         "name": "Data Science Bootcamp with Azure",
         "date": "2024-08-01",
@@ -99,12 +105,6 @@
         "date": "2022-12-01",
         "issuer": "Platzi",
         "url": "https://drive.google.com/file/d/1D-0UMrBKwizxuHDs0tGdrhTQ1JF1Oxar/view?usp=sharing"
-    },
-    {
-        "name": "EF SET English Certificate 73/100 (C2 Proficient)",
-        "date": "2022-07-01",
-        "issuer": "EF Standard English Test (EF SET)",
-        "url": "https://www.efset.org/cert/aXug7q"
     },
     {
         "name": "Creating Online Stores with WooCommerce",
