@@ -285,6 +285,15 @@
 				"Python",
 				"Servidor"
 			]
+		},
+		{
+			"name": "Vue",
+			"level": "Intermedio",
+			"keywords": [
+				"Desarrollo Web",
+				"Frontend",
+				"JavaScript"
+			]
 		}
 	],
 	"languages": [
