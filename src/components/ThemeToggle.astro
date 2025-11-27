@@ -1,0 +1,100 @@
+---
+import Moon from "@/icons/Moon.astro"
+import Sun from "@/icons/Sun.astro"
+---
+
+<button id="theme-toggle" class="theme-toggle no-print" aria-label="Toggle theme">
+  <span class="theme-icon">
+    <Moon />
+  </span>
+  <span class="theme-icon">
+    <Sun />
+  </span>
+</button>
+
+<script>
+  // Toggle theme on button click
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('theme-toggle');
+    
+    if (toggleButton) {
+      toggleButton.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    }
+  });
+</script>
+
+<style>
+  .theme-toggle {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: var(--color-border);
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--radius-md);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-base);
+    z-index: 1000;
+    padding: 0;
+  }
+
+  .theme-toggle:hover {
+    background: var(--color-border-dark);
+    transform: scale(1.05);
+  }
+
+  .theme-toggle:active {
+    transform: scale(0.95);
+  }
+
+  .theme-icon {
+    display: none; /* Hide by default to prevent flash */
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+  }
+
+  /* In light mode, show moon (first icon), hide sun (second icon) */
+  /* In light mode, show moon (first icon), hide sun (second icon) */
+  :global([data-theme="light"]) .theme-icon:first-child {
+    display: flex;
+  }
+
+  :global([data-theme="light"]) .theme-icon:last-child {
+    display: none;
+  }
+
+  /* In dark mode, show sun (second icon), hide moon (first icon) */
+  :global([data-theme="dark"]) .theme-icon:first-child {
+    display: none;
+  }
+
+  :global([data-theme="dark"]) .theme-icon:last-child {
+    display: flex;
+  }
+
+  @media (width <= 700px) {
+    .theme-toggle {
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  @media print {
+    .theme-toggle {
+      display: none !important;
+    }
+  }
+</style>

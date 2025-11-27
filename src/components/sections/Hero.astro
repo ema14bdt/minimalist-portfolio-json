@@ -77,24 +77,24 @@ const printInfo = [email, linkedUrl].filter(Boolean).join(" • ")
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: var(--spacing-1);
   }
 
   .info {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    padding-right: 32px;
+    gap: var(--spacing-half);
+    padding-right: var(--spacing-lg);
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: var(--font-size-3xl);
   }
 
   h2 {
-    color: #444;
+    color: var(--color-tertiary);
     font-weight: 500;
-    font-size: 1.1rem;
+    font-size: var(--font-size-2xl);
     text-wrap: balance;
   }
 
@@ -102,41 +102,42 @@ const printInfo = [email, linkedUrl].filter(Boolean).join(" • ")
     aspect-ratio: 1 / 1;
     object-fit: cover;
     width: 128px;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
   }
 
   span {
-    color: #666;
+    color: var(--color-text-light);
     display: flex;
     align-items: center;
-    gap: 0.25rem;
-    font-size: 0.85rem;
+    gap: var(--spacing-quarter);
+    font-size: var(--font-size-lg);
     letter-spacing: -0.05rem;
   }
 
   footer {
-    color: #555;
-    font-size: 0.65rem;
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
     display: flex;
-    gap: 4px;
-    margin-top: 8px;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+    background: transparent;
   }
 
   footer a {
-    color: #777;
+    color: var(--color-text-lighter);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #eee;
-    padding: 4px;
+    border: 1px solid var(--color-border);
+    padding: var(--spacing-xs);
     height: 32px;
     width: 32px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-base);
   }
 
   footer a:hover {
-    background: #eee;
-    border: 1px solid #ddd;
+    background: var(--color-footer-hover-bg);
+    border: 1px solid var(--color-border-dark);
   }
 </style>

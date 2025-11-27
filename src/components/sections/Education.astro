@@ -40,17 +40,17 @@ import { monthYear } from "@/utils/utils.ts"
   ul {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: var(--spacing-lg);
   }
 
   article h3 {
     font-weight: 500;
-    color: #111;
-    margin-bottom: 4px;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xs);
   }
 
   article h4, .link-education {
-    color: #222;
+    color: var(--color-secondary);
     font-weight: 400;
   }
 
@@ -62,12 +62,12 @@ import { monthYear } from "@/utils/utils.ts"
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 4px;
+    margin-bottom: var(--spacing-xs);
   }
 
   time {
-    color: #555;
-    font-size: 0.85rem;
+    color: var(--color-text);
+    font-size: var(--font-size-lg);
     text-align: end;
   }
 </style>

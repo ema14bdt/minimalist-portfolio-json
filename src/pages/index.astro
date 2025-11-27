@@ -9,6 +9,7 @@ import Hero from "@/components/sections/Hero.astro"
 import Projects from "@/components/sections/Projects.astro"
 import Skills from "@/components/sections/Skills.astro"
 import KeyboardManager from "@/components/KeyboardManager.astro"
+import ThemeToggle from "@/components/ThemeToggle.astro"
 
 import { basics } from "@cv"
 const { name, label } = basics
@@ -25,6 +26,7 @@ const { name, label } = basics
     <Certificates />
   </main>
 
+  <ThemeToggle />
   <KeyboardManager />
 </Layout>
 

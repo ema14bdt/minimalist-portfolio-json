@@ -1,0 +1,90 @@
+/* CSS Variables for Light and Dark Themes */
+:root {
+  /* Light Theme Colors */
+  --color-primary: #111;
+  --color-secondary: #222;
+  --color-tertiary: #444;
+  --color-text: #555;
+  --color-text-light: #666;
+  --color-text-lighter: #777;
+  --color-background: #fff;
+  --color-border: #eee;
+  --color-border-dark: #ddd;
+  --color-surface: #f2f2f2;
+  --color-accent: rgb(0, 188, 47);
+  --color-footer-bg: transparent;
+  --color-footer-hover-bg: #eee;
+  
+  /* Typography */
+  --font-size-xs: 0.6rem;
+  --font-size-sm: 0.65rem;
+  --font-size-base: 0.75rem;
+  --font-size-md: 0.8rem;
+  --font-size-lg: 0.85rem;
+  --font-size-xl: 0.9rem;
+  --font-size-2xl: 1.1rem;
+  --font-size-3xl: 2rem;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-quarter: 0.25rem;
+  --spacing-half: 0.5rem;
+  --spacing-1: 1rem;
+  
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  
+  /* Transitions */
+  --transition-base: all 0.3s ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 1px var(--color-surface);
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+  --color-primary: #e8e8e8;
+  --color-secondary: #d0d0d0;
+  --color-tertiary: #b0b0b0;
+  --color-text: #a0a0a0;
+  --color-text-light: #888;
+  --color-text-lighter: #777;
+  --color-background: #0f0f0f;
+  --color-border: #2a2a2a;
+  --color-border-dark: #333;
+  --color-surface: #1a1a1a;
+  --color-accent: rgb(0, 220, 55);
+  --color-footer-bg: transparent;
+  --color-footer-hover-bg: #2a2a2a;
+}
+
+/* Smooth theme transition */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Common utility classes */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.link-hover {
+  transition: var(--transition-base);
+}
+
+.link-hover:hover {
+  text-decoration: underline;
+}
