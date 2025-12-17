@@ -71,6 +71,12 @@
 	],
 	"certificates": [
 	{
+		"name": "Data Analytics with Python",
+		"date": "2025-12-01",
+		"issuer": "Buenos Aires Aprende - Buenos Aires Ciudad",
+		"url": "https://drive.google.com/file/d/1bGJsmYwdVfCputIXJMpqN21n2d5D6EZy/view?usp=sharing"
+	},
+	{
 		"name": "Professional Full Stack Web Developer",
 		"date": "2025-08-01",
 		"issuer": "ForIT Software Factory",
