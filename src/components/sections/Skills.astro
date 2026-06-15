@@ -2,23 +2,34 @@
 import Section from "../Section.astro"
 
 import { skills } from "@cv"
+import { getLangFromAstro } from "@/utils/i18n"
+
+const currentLang = getLangFromAstro(Astro)
+
+interface Skill {
+  name: string
+  level: { en: string; es: string }
+  category: { en: string; es: string }
+  keywords: { en: string[]; es: string[] }
+}
 
 const skillsByCategory = skills.reduce((acc, skill) => {
-  const category = (skill as any).category || "Other";
-  if (!acc[category]) acc[category] = [];
-  acc[category].push(skill);
-  acc[category].sort((a, b) => a.name.localeCompare(b.name));
-  return acc;
-}, {} as Record<string, any[]>);
+  const category = (skill as Skill).category || { en: "Other", es: "Otro" }
+  const categoryKey = category.en
+  if (!acc[categoryKey]) acc[categoryKey] = { category, skills: [] }
+  acc[categoryKey].skills.push(skill)
+  acc[categoryKey].skills.sort((a: any, b: any) => a.name.localeCompare(b.name))
+  return acc
+}, {} as Record<string, { category: { en: string; es: string }; skills: any[] }>)
 ---
 
 <Section title="Skills">
   {
-    Object.entries(skillsByCategory).map(([category, categorySkills]) => (
+    Object.entries(skillsByCategory).map(([key, { category }], index) => (
       <div class="skills-category">
-        <h3>{category}</h3>
+        <h3 data-i18n={`skills.category[${index}]`}>{category[currentLang as keyof typeof category] || category.en}</h3>
         <ul>
-          {categorySkills.map(({ name }) => (
+          {skillsByCategory[key].skills.map(({ name }) => (
             <li>
               <span>{name}</span>
             </li>
@@ -28,6 +39,48 @@ const skillsByCategory = skills.reduce((acc, skill) => {
     ))
   }
 </Section>
+
+<script>
+  import { skills } from "@cv"
+  
+  interface Skill {
+    name: string
+    level: { en: string; es: string }
+    category: { en: string; es: string }
+    keywords: { en: string[]; es: string[] }
+  }
+  
+  const skillsByCategory = skills.reduce((acc, skill) => {
+    const category = (skill as Skill).category || { en: "Other", es: "Otro" }
+    const categoryKey = category.en
+    if (!acc[categoryKey]) acc[categoryKey] = { category, skills: [] }
+    acc[categoryKey].skills.push(skill)
+    return acc
+  }, {} as Record<string, { category: { en: string; es: string }; skills: any[] }>)
+  
+  function updateSkillsLanguage() {
+    const lang = document.documentElement.getAttribute('lang') || 'es'
+    
+    Object.values(skillsByCategory).forEach(({ category }, index) => {
+      const categoryEl = document.querySelector(`[data-i18n="skills.category[${index}]"]`)
+      if (categoryEl && category) {
+        categoryEl.textContent = category[lang as keyof typeof category] || category.en
+      }
+    })
+  }
+
+  updateSkillsLanguage()
+  
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'lang') {
+        updateSkillsLanguage()
+      }
+    })
+  })
+  
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] })
+</script>
 
 <style>
   .skills-category {

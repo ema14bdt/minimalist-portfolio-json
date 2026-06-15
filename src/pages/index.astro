@@ -10,12 +10,16 @@ import Projects from "@/components/sections/Projects.astro"
 import Skills from "@/components/sections/Skills.astro"
 import KeyboardManager from "@/components/KeyboardManager.astro"
 import ThemeToggle from "@/components/ThemeToggle.astro"
+import LanguageToggle from "@/components/LanguageToggle.astro"
 
 import { basics } from "@cv"
+import { getLangFromAstro } from "@/utils/i18n"
+
 const { name, label } = basics
+const currentLang = getLangFromAstro(Astro)
 ---
 
-<Layout title={`${name} - ${label}`}>
+<Layout title={`${name} - ${label[currentLang as keyof typeof label] || label.en}`} lang={currentLang}>
   <main>
     <Hero />
     <About />
@@ -27,6 +31,7 @@ const { name, label } = basics
   </main>
 
   <ThemeToggle />
+  <LanguageToggle />
   <KeyboardManager />
 </Layout>
 
@@ -35,5 +40,11 @@ const { name, label } = basics
     padding: 4rem;
     margin: auto;
     width: 100%;
+  }
+
+  @media (width <= 700px) {
+    main {
+      padding: 3rem 1.5rem;
+    }
   }
 </style>

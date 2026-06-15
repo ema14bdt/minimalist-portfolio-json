@@ -1,10 +1,16 @@
 {
 	"basics": {
 		"name": "Emanuel Romero",
-		"label": "Web Developer",
+		"label": {
+			"en": "Web Developer",
+			"es": "Desarrollador Web"
+		},
 		"image": "/me.webp",
 		"email": "e.romero.1989@gmail.com",
-		"summary": "I am passionate about programming and developing effective solutions. I am an organized and capable person, which allows me to work efficiently on projects. I am committed to my growth and evolution, as well as to the work team. My main goal is to be an outstanding professional in the IT area, able to face and solve any challenge that may arise.",
+		"summary": {
+			"en": "I am passionate about programming and developing effective solutions. I am an organized and capable person, which allows me to work efficiently on projects. I am committed to my growth and evolution, as well as to the work team. My main goal is to be an outstanding professional in the IT area, able to face and solve any challenge that may arise.",
+			"es": "Me apasiona programar y desarrollar soluciones efectivas. Soy una persona organizada y capaz, lo que me permite trabajar eficientemente en proyectos. Estoy comprometido con mi crecimiento y evolución, así como con el equipo de trabajo. Mi objetivo principal es ser un profesional destacado en el área de IT, capaz de enfrentar y resolver cualquier desafío que se presente."
+		},
 		"location": {
 			"postalCode": "1824",
 			"city": "Lanús",
@@ -29,296 +35,460 @@
 	"work": [
 		{
 			"name": "Ministerio Público Fiscal de la Nación",
-			"position": "Full Stack Developer",
+			"position": {
+				"en": "Full Stack Developer",
+				"es": "Desarrollador Full Stack"
+			},
 			"url": "https://www.mpf.gob.ar/",
 			"startDate": "2023-07-01",
 			"endDate": null,
-			"summary": "Backend and frontend development of internal web application for information management. Technologies used: Django, VueJS, PostgreSQL."
+			"summary": {
+				"en": "Backend and frontend development of internal web application for information management. Technologies used: Django, VueJS, PostgreSQL.",
+				"es": "Desarrollo backend y frontend de aplicación web interna para gestión de información. Tecnologías utilizadas: Django, VueJS, PostgreSQL."
+			}
 		},
 		{
 			"name": "IT Rock",
-			"position": "Backend Developer",
+			"position": {
+				"en": "Backend Developer",
+				"es": "Desarrollador Backend"
+			},
 			"url": "https://itrock.com.ar/",
 			"startDate": "2021-12-01",
 			"endDate": "2023-07-01",
-			"summary": "Backend development of web applications, administration systems, exposure, and documentation of APIs. Technologies used: PHP, Javascript, JQuery, Python, Laravel, Django, FastAPI, Docker, SQL, among others."
+			"summary": {
+				"en": "Backend development of web applications, administration systems, exposure, and documentation of APIs. Technologies used: PHP, Javascript, JQuery, Python, Laravel, Django, FastAPI, Docker, SQL, among others.",
+				"es": "Desarrollo backend de aplicaciones web, sistemas de administración, exposición y documentación de APIs. Tecnologías utilizadas: PHP, Javascript, JQuery, Python, Laravel, Django, FastAPI, Docker, SQL, entre otras."
+			}
 		}
 	],
 	"education": [
 		{
-			"institution": "Digital House",
-			"url": "https://drive.google.com/file/d/1OjBHxQIiFDHzQzI8xmwGBhPgMCqu8Xju/view?usp=drive_link",
-			"area": "Full Stack NodeJS Web Developer",
-			"studyType": "Course",
-			"startDate": "2021-04-01",
-			"endDate": "2021-11-01"
+			"institution": "Universidad Nacional de Chilecito",
+			"area": {
+				"en": "University Technical Degree in Web Development",
+				"es": "Tecnicatura Universitaria en Desarrollo Web"
+			},
+			"studyType": {
+				"en": "Degree",
+				"es": "Tecnicatura"
+			},
+			"startDate": "2026-03-01",
+			"endDate": null
 		},
 		{
 			"institution": "Universidad Nacional de Salta",
 			"url": "https://drive.google.com/file/d/1mYZQDbYuadoJQAyGlrtoOwh1H1aZQRKA/view?usp=drive_link",
-			"area": "Data Science introduction",
-			"studyType": "Course",
+			"area": {
+				"en": "Data Science introduction",
+				"es": "Introducción a Ciencia de Datos"
+			},
+			"studyType": {
+				"en": "Course",
+				"es": "Curso"
+			},
 			"startDate": "2023-07-01",
 			"endDate": "2023-11-01"
 		},
 		{
+			"institution": "Digital House",
+			"url": "https://drive.google.com/file/d/1OjBHxQIiFDHzQzI8xmwGBhPgMCqu8Xju/view?usp=drive_link",
+			"area": {
+				"en": "Full Stack NodeJS Web Developer",
+				"es": "Desarrollador Web Full Stack NodeJS"
+			},
+			"studyType": {
+				"en": "Course",
+				"es": "Curso"
+			},
+			"startDate": "2021-04-01",
+			"endDate": "2021-11-01"
+		},
+		{
 			"institution": "Municipio de Lanús",
-			"area": "English for programmers",
-			"studyType": "Course",
+			"area": {
+				"en": "English for programmers",
+				"es": "Inglés para programadores"
+			},
+			"studyType": {
+				"en": "Course",
+				"es": "Curso"
+			},
 			"startDate": "2022-03-01",
 			"endDate": "2022-11-01"
 		}
 	],
 	"certificates": [
-	{
-		"name": "Data Analytics with Python",
-		"date": "2025-12-01",
-		"issuer": "Buenos Aires Aprende - Buenos Aires Ciudad",
-		"url": "https://drive.google.com/file/d/1bGJsmYwdVfCputIXJMpqN21n2d5D6EZy/view?usp=sharing"
-	},
-	{
-		"name": "Professional Full Stack Web Developer",
-		"date": "2025-08-01",
-		"issuer": "ForIT Software Factory",
-		"url": "https://drive.google.com/file/d/1kamVUnE2OhnkDn6CbSdT7FxGSzYt5fMW/view?usp=sharing"
-	},
-    {
-        "name": "Data Science Bootcamp with Azure",
-        "date": "2024-08-01",
-        "issuer": "Código Facilito",
-        "url": "https://drive.google.com/file/d/1LMMSvPDN5aCFn2ZxyYEBdGJ369kIhKA1/view?usp=sharing"
-    },
-    {
-        "name": "Data Science Bootcamp",
-        "date": "2023-11-01",
-        "issuer": "Código Facilito",
-        "url": "https://drive.google.com/file/d/1nPtsK9TPkn3NLvRiI5tAkMDJHS9QgXNF/view?usp=sharing"
-    },
-    {
-        "name": "FastAPI Course: Database, Modularization, and Production Deployment",
-        "date": "2022-12-01",
-        "issuer": "Platzi",
-        "url": "https://drive.google.com/file/d/1ivGSNw9P0NKgM6nGcR5jwMRgMX29BX3k/view?usp=sharing"
-    },
-    {
-        "name": "FastAPI Course: Fundamentals, Paths, Operations & Validations",
-        "date": "2022-12-01",
-        "issuer": "Platzi",
-        "url": "https://drive.google.com/file/d/1meCHQfH3l98SIM1PBUIhvUAio0yGCTZ8/view?usp=sharing"
-    },
-    {
-        "name": "FastAPI Course: Modularization, Data, and Errors",
-        "date": "2022-12-01",
-        "issuer": "Platzi",
-        "url": "https://drive.google.com/file/d/1D-0UMrBKwizxuHDs0tGdrhTQ1JF1Oxar/view?usp=sharing"
-    },
-    {
-        "name": "Creating Online Stores with WooCommerce",
-        "date": "2022-06-01",
-        "issuer": "Platzi",
-        "url": "https://drive.google.com/file/d/1ZojO7yTpFUtytNj_rLdLxOend3D5bcIn/view?usp=sharing"
-    },
-    {
-        "name": "REST API with PHP",
-        "date": "2022-02-01",
-        "issuer": "Platzi",
-        "url": "https://drive.google.com/file/d/1FFMEetGGrr4HpWZRrXIRkpQM81niLswu/view?usp=sharing"
-    },
-    {
-        "name": "Asynchronous JavaScript",
-        "date": "2022-02-01",
-        "issuer": "Platzi",
-        "url": "https://drive.google.com/file/d/1J-yo5y7RpZ1LCQW4ycKaqv7GQxNf5hEe/view?usp=sharing"
-    },
-    {
-        "name": "Compiling JavaScript Applications with TypeScript",    
-        "date": "2022-02-01",
-        "issuer": "Microsoft Learning 365",
-        "url": "https://drive.google.com/file/d/1yMLohp9oCQsdONAJXIpppj9DYUE4FTmg/view?usp=sharing"
-    },
-    {
-        "name": "Getting Started with VueJS",
-        "date": "2022-02-01",
-        "issuer": "Microsoft Learning 365",
-        "url": "https://drive.google.com/file/d/1vomNv-Rwqu0Cm_k3l5sWhXPye5LJhyGK/view?usp=sharing"
-    },
-    {
-        "name": "Object-Oriented Programming with PHP",
-        "date": "2022-02-01",
-        "issuer": "Platzi",
-        "url": "https://drive.google.com/file/d/1W9AYoXTHte0k0q2oZhFtyF3_Sypus7e3/view?usp=sharing"
-    },
-    {
-        "name": "Basic Data Handling with Laravel and Eloquent ORM",
-        "date": "2022-01-01",
-        "issuer": "Platzi",
-        "url": "https://drive.google.com/file/d/1S96E-To80iep8Lwe7oPX2CsvwSImcRxq/view?usp=sharing"
-    },
-    {
-        "name": "SPA in Laravel with Inertia and VueJS",
-        "date": "2022-01-01",
-        "issuer": "Platzi",
-        "url": "https://drive.google.com/file/d/1_Vc7vNimlb_0K3Z0kEDkJbfFsGQk4ab6/view?usp=sharing"
-    },
-    {
-        "name": "REST API with Laravel",
-        "date": "2021-12-01",
-        "issuer": "Platzi",
-        "url": "https://drive.google.com/file/d/1tEKMbl57gODctOBaDNfl0zrQPGL-i-CI/view?usp=sharing"
-    },
-    {
-        "name": "Learn SQL from Scratch",
-        "date": "2021-11-01",
-        "issuer": "Udemy",
-        "url": "https://drive.google.com/file/d/1gTqZBEz-K7BxPFT7IV8R05ufOEQspNhd/view?usp=drivesdk"
-    },
-    {
-        "name": "English for Software Development",
-        "date": "2021-10-01",
-        "issuer": "Polo TIC Misiones",
-        "url": "https://drive.google.com/file/d/1j2rBo598qv77RUMPZDI7mKV-xcZXjqVQ/view?usp=sharing"
-    },
-    {
-        "name": "English for Software Development",
-        "date": "2021-07-01",
-        "issuer": "Polo TIC Misiones",
-        "url": "https://drive.google.com/file/d/14JiiEKr26zsgYoUzY21zJajwtEvq0p9m/view?usp=sharing"
-    }
+		{
+			"name": {
+				"en": "Data Analytics with Python",
+				"es": "Análisis de Datos con Python"
+			},
+			"date": "2025-12-01",
+			"issuer": "Buenos Aires Aprende - Buenos Aires Ciudad",
+			"url": "https://drive.google.com/file/d/1bGJsmYwdVfCputIXJMpqN21n2d5D6EZy/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "Professional Full Stack Web Developer",
+				"es": "Desarrollador Web Full Stack Profesional"
+			},
+			"date": "2025-08-01",
+			"issuer": "ForIT Software Factory",
+			"url": "https://drive.google.com/file/d/1kamVUnE2OhnkDn6CbSdT7FxGSzYt5fMW/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "Data Science Bootcamp with Azure",
+				"es": "Bootcamp de Ciencia de Datos con Azure"
+			},
+			"date": "2024-08-01",
+			"issuer": "Código Facilito",
+			"url": "https://drive.google.com/file/d/1LMMSvPDN5aCFn2ZxyYEBdGJ369kIhKA1/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "Data Science Bootcamp",
+				"es": "Bootcamp de Ciencia de Datos"
+			},
+			"date": "2023-11-01",
+			"issuer": "Código Facilito",
+			"url": "https://drive.google.com/file/d/1nPtsK9TPkn3NLvRiI5tAkMDJHS9QgXNF/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "FastAPI Course: Database, Modularization, and Production Deployment",
+				"es": "Curso FastAPI: Base de Datos, Modularización y Despliegue en Producción"
+			},
+			"date": "2022-12-01",
+			"issuer": "Platzi",
+			"url": "https://drive.google.com/file/d/1ivGSNw9P0NKgM6nGcR5jwMRgMX29BX3k/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "FastAPI Course: Fundamentals, Paths, Operations & Validations",
+				"es": "Curso FastAPI: Fundamentos, Rutas, Operaciones y Validaciones"
+			},
+			"date": "2022-12-01",
+			"issuer": "Platzi",
+			"url": "https://drive.google.com/file/d/1meCHQfH3l98SIM1PBUIhvUAio0yGCTZ8/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "FastAPI Course: Modularization, Data, and Errors",
+				"es": "Curso FastAPI: Modularización, Datos y Errores"
+			},
+			"date": "2022-12-01",
+			"issuer": "Platzi",
+			"url": "https://drive.google.com/file/d/1D-0UMrBKwizxuHDs0tGdrhTQ1JF1Oxar/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "Creating Online Stores with WooCommerce",
+				"es": "Creación de Tiendas Online con WooCommerce"
+			},
+			"date": "2022-06-01",
+			"issuer": "Platzi",
+			"url": "https://drive.google.com/file/d/1ZojO7yTpFUtytNj_rLdLxOend3D5bcIn/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "REST API with PHP",
+				"es": "API REST con PHP"
+			},
+			"date": "2022-02-01",
+			"issuer": "Platzi",
+			"url": "https://drive.google.com/file/d/1FFMEetGGrr4HpWZRrXIRkpQM81niLswu/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "Asynchronous JavaScript",
+				"es": "JavaScript Asíncrono"
+			},
+			"date": "2022-02-01",
+			"issuer": "Platzi",
+			"url": "https://drive.google.com/file/d/1J-yo5y7RpZ1LCQW4ycKaqv7GQxNf5hEe/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "Compiling JavaScript Applications with TypeScript",
+				"es": "Compilación de Aplicaciones JavaScript con TypeScript"
+			},
+			"date": "2022-02-01",
+			"issuer": "Microsoft Learning 365",
+			"url": "https://drive.google.com/file/d/1yMLohp9oCQsdONAJXIpppj9DYUE4FTmg/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "Getting Started with VueJS",
+				"es": "Introducción a VueJS"
+			},
+			"date": "2022-02-01",
+			"issuer": "Microsoft Learning 365",
+			"url": "https://drive.google.com/file/d/1vomNv-Rwqu0Cm_k3l5sWhXPye5LJhyGK/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "Object-Oriented Programming with PHP",
+				"es": "Programación Orientada a Objetos con PHP"
+			},
+			"date": "2022-02-01",
+			"issuer": "Platzi",
+			"url": "https://drive.google.com/file/d/1W9AYoXTHte0k0q2oZhFtyF3_Sypus7e3/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "Basic Data Handling with Laravel and Eloquent ORM",
+				"es": "Manejo Básico de Datos con Laravel y Eloquent ORM"
+			},
+			"date": "2022-01-01",
+			"issuer": "Platzi",
+			"url": "https://drive.google.com/file/d/1S96E-To80iep8Lwe7oPX2CsvwSImcRxq/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "SPA in Laravel with Inertia and VueJS",
+				"es": "SPA en Laravel con Inertia y VueJS"
+			},
+			"date": "2022-01-01",
+			"issuer": "Platzi",
+			"url": "https://drive.google.com/file/d/1_Vc7vNimlb_0K3Z0kEDkJbfFsGQk4ab6/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "REST API with Laravel",
+				"es": "API REST con Laravel"
+			},
+			"date": "2021-12-01",
+			"issuer": "Platzi",
+			"url": "https://drive.google.com/file/d/1tEKMbl57gODctOBaDNfl0zrQPGL-i-CI/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "Learn SQL from Scratch",
+				"es": "Aprende SQL desde Cero"
+			},
+			"date": "2021-11-01",
+			"issuer": "Udemy",
+			"url": "https://drive.google.com/file/d/1gTqZBEz-K7BxPFT7IV8R05ufOEQspNhd/view?usp=drivesdk"
+		},
+		{
+			"name": {
+				"en": "English for Software Development",
+				"es": "Inglés para Desarrollo de Software"
+			},
+			"date": "2021-10-01",
+			"issuer": "Polo TIC Misiones",
+			"url": "https://drive.google.com/file/d/1j2rBo598qv77RUMPZDI7mKV-xcZXjqVQ/view?usp=sharing"
+		},
+		{
+			"name": {
+				"en": "English for Software Development",
+				"es": "Inglés para Desarrollo de Software"
+			},
+			"date": "2021-07-01",
+			"issuer": "Polo TIC Misiones",
+			"url": "https://drive.google.com/file/d/14JiiEKr26zsgYoUzY21zJajwtEvq0p9m/view?usp=sharing"
+		}
 	],
 
 	"skills": [
 		{
 			"name": "HTML",
-			"level": "Avanzado",
-            "category": "Languages",
-			"keywords": [
-				"Desarrollo Web",
-				"Frontend"
-			]
+			"level": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			},
+			"category": {
+				"en": "Languages",
+				"es": "Lenguajes"
+			},
+			"keywords": {
+				"en": ["Web Development", "Frontend"],
+				"es": ["Desarrollo Web", "Frontend"]
+			}
 		},
 		{
 			"name": "CSS",
-			"level": "Avanzado",
-            "category": "Languages",
-			"keywords": [
-				"Desarrollo Web",
-				"Frontend",
-				"Diseño Responsive"
-			]
+			"level": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			},
+			"category": {
+				"en": "Languages",
+				"es": "Lenguajes"
+			},
+			"keywords": {
+				"en": ["Web Development", "Frontend", "Responsive Design"],
+				"es": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+			}
 		},
 		{
 			"name": "JavaScript",
-			"level": "Avanzado",
-            "category": "Languages",
-			"keywords": [
-				"Desarrollo Web",
-				"Frontend",
-				"Backend",
-				"Fullstack"
-			]
+			"level": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			},
+			"category": {
+				"en": "Languages",
+				"es": "Lenguajes"
+			},
+			"keywords": {
+				"en": ["Web Development", "Frontend", "Backend", "Fullstack"],
+				"es": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
+			}
 		},
 		{
 			"name": "Node",
-			"level": "Avanzado",
-            "category": "Frameworks & Libraries",
-			"keywords": [
-				"Desarrollo Web",
-				"Backend",
-				"JavaScript",
-				"Servidor"
-			]
+			"level": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			},
+			"category": {
+				"en": "Frameworks & Libraries",
+				"es": "Frameworks y Librerías"
+			},
+			"keywords": {
+				"en": ["Web Development", "Backend", "JavaScript", "Server"],
+				"es": ["Desarrollo Web", "Backend", "JavaScript", "Servidor"]
+			}
 		},
 		{
 			"name": "SQL",
-			"level": "Avanzado",
-            "category": "Languages",
-			"keywords": [
-				"Bases de Datos",
-				"MySQL",
-				"PostgreSQL",
-				"Almacenamiento de Datos",
-				"Backend"
-			]
+			"level": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			},
+			"category": {
+				"en": "Languages",
+				"es": "Lenguajes"
+			},
+			"keywords": {
+				"en": ["Databases", "MySQL", "PostgreSQL", "Data Storage", "Backend"],
+				"es": ["Bases de Datos", "MySQL", "PostgreSQL", "Almacenamiento de Datos", "Backend"]
+			}
 		},
 		{
 			"name": "PHP",
-			"level": "Avanzado",
-            "category": "Languages",
-			"keywords": [
-				"Desarrollo Web",
-				"Frontend",
-				"Backend"
-			]
+			"level": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			},
+			"category": {
+				"en": "Languages",
+				"es": "Lenguajes"
+			},
+			"keywords": {
+				"en": ["Web Development", "Frontend", "Backend"],
+				"es": ["Desarrollo Web", "Frontend", "Backend"]
+			}
 		},
 		{
 			"name": "Laravel",
-			"level": "Avanzado",
-            "category": "Frameworks & Libraries",
-			"keywords": [
-				"Desarrollo Web",
-				"Backend",
-				"PHP",
-				"Servidor"
-			]
+			"level": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			},
+			"category": {
+				"en": "Frameworks & Libraries",
+				"es": "Frameworks y Librerías"
+			},
+			"keywords": {
+				"en": ["Web Development", "Backend", "PHP", "Server"],
+				"es": ["Desarrollo Web", "Backend", "PHP", "Servidor"]
+			}
 		},
 		{
 			"name": "Python",
-			"level": "Avanzado",
-            "category": "Languages",
-			"keywords": [
-				"Desarrollo Web",
-				"Backend",
-				"Fullstack"
-			]
+			"level": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			},
+			"category": {
+				"en": "Languages",
+				"es": "Lenguajes"
+			},
+			"keywords": {
+				"en": ["Web Development", "Backend", "Fullstack"],
+				"es": ["Desarrollo Web", "Backend", "Fullstack"]
+			}
 		},
 		{
 			"name": "Django",
-			"level": "Avanzado",
-            "category": "Frameworks & Libraries",
-			"keywords": [
-				"Desarrollo Web",
-				"Backend",
-				"Python",
-				"Servidor"
-			]
+			"level": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			},
+			"category": {
+				"en": "Frameworks & Libraries",
+				"es": "Frameworks y Librerías"
+			},
+			"keywords": {
+				"en": ["Web Development", "Backend", "Python", "Server"],
+				"es": ["Desarrollo Web", "Backend", "Python", "Servidor"]
+			}
 		},
 		{
 			"name": "FastAPI",
-			"level": "Avanzado",
-            "category": "Frameworks & Libraries",
-			"keywords": [
-				"Desarrollo Web",
-				"Backend",
-				"Python",
-				"Servidor"
-			]
+			"level": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			},
+			"category": {
+				"en": "Frameworks & Libraries",
+				"es": "Frameworks y Librerías"
+			},
+			"keywords": {
+				"en": ["Web Development", "Backend", "Python", "Server"],
+				"es": ["Desarrollo Web", "Backend", "Python", "Servidor"]
+			}
 		},
 		{
 			"name": "Vue",
-			"level": "Intermedio",
-            "category": "Frameworks & Libraries",
-			"keywords": [
-				"Desarrollo Web",
-				"Frontend",
-				"JavaScript"
-			]
+			"level": {
+				"en": "Intermediate",
+				"es": "Intermedio"
+			},
+			"category": {
+				"en": "Frameworks & Libraries",
+				"es": "Frameworks y Librerías"
+			},
+			"keywords": {
+				"en": ["Web Development", "Frontend", "JavaScript"],
+				"es": ["Desarrollo Web", "Frontend", "JavaScript"]
+			}
 		}
 	],
 	"languages": [
 		{
-			"language": "Spanish",
-			"fluency": "Native speaker"
+			"language": {
+				"en": "Spanish",
+				"es": "Español"
+			},
+			"fluency": {
+				"en": "Native speaker",
+				"es": "Lengua materna"
+			}
 		},
 		{
-			"language": "English",
-			"fluency": "Advanced"
+			"language": {
+				"en": "English",
+				"es": "Inglés"
+			},
+			"fluency": {
+				"en": "Advanced",
+				"es": "Avanzado"
+			}
 		}
 	],
 	"projects": [
 		{
 			"name": "Agro América Emprende",
 			"isActive": true,
-			"description": "An interactive platform connecting agricultural entrepreneurs with investors or companies.",
+			"description": {
+				"en": "Interactive platform connecting agricultural entrepreneurs with investors and companies across Latin America. Features real-time messaging, project dashboards, and secure document management.",
+				"es": "Plataforma interactiva que conecta emprendedores agrícolas con inversores y empresas en toda América Latina. Incluye mensajería en tiempo real, paneles de proyectos y gestión segura de documentos."
+			},
 			"highlights": [
 				"Laravel",
 				"Backoffice"
@@ -328,7 +498,10 @@
 		{
 			"name": "Amigos de la Casa",
 			"isActive": true,
-			"description": "Benefits club for Fullescabio customers, offering multiple brands and discounts.",
+			"description": {
+				"en": "Benefits club for Fullescabio customers, offering exclusive discounts and promotions from multiple partner brands.",
+				"es": "Club de beneficios para clientes de Fullescabio, ofreciendo descuentos y promociones exclusivas de múltiples marcas asociadas."
+			},
 			"highlights": [
 				"Laravel",
 				"Backoffice"
@@ -338,7 +511,10 @@
 		{
 			"name": "AVP Intra",
 			"isActive": true,
-			"description": "Platform for a neighborhood to process service information, common documents, and regulations.",
+			"description": {
+				"en": "Internal platform for processing service information, common documents, and regulations for neighborhood management.",
+				"es": "Plataforma interna para procesar información de servicios, documentos comunes y normativas para la gestión barrial."
+			},
 			"highlights": [
 				"FastAPI",
 				"Pandas"
@@ -347,8 +523,11 @@
 		},
 		{
 			"name": "Club Qualia",
-			"isActive": true,
-			"description": "Benefits club for Qualia insurance clients, offering multiple brands and discounts.",
+			"isActive": false,
+			"description": {
+				"en": "Benefits club for Qualia insurance clients, offering exclusive discounts and promotions from multiple partner brands.",
+				"es": "Club de beneficios para clientes de Qualia Seguros, ofreciendo descuentos y promociones exclusivas de múltiples marcas asociadas."
+			},
 			"highlights": [
 				"Laravel",
 				"Backoffice"
@@ -358,7 +537,10 @@
 		{
 			"name": "Dosuna",
 			"isActive": true,
-			"description": "Mountain products store.",
+			"description": {
+				"en": "E-commerce store specializing in mountain and outdoor products, with integrated inventory and payment management.",
+				"es": "Tienda de comercio electrónico especializada en productos de montaña y aire libre, con gestión integrada de inventario y pagos."
+			},
 			"highlights": [
 				"Wordpress",
 				"WooCommerce",
@@ -369,7 +551,10 @@
 		{
 			"name": "Fenomenautas",
 			"isActive": true,
-			"description": "Fenomenautas connects teachers and scientists, offering a platform to share and access innovative educational proposals that often stay within classrooms.",
+			"description": {
+				"en": "Platform connecting teachers and scientists, sharing innovative educational proposals that often stay within classrooms.",
+				"es": "Plataforma que conecta docentes y científicos, compartiendo propuestas educativas innovadoras que suelen quedarse dentro de las aulas."
+			},
 			"highlights": [
 				"Frontend",
 				"Backend",
@@ -380,7 +565,10 @@
 		{
 			"name": "Inka",
 			"isActive": true,
-			"description": "Sales of Crafts, design and culture Argentina.",
+			"description": {
+				"en": "E-commerce store for Argentine crafts, design, and cultural products, featuring curated collections and secure checkout.",
+				"es": "Tienda de artesanías, diseño y productos culturales argentinos, con colecciones seleccionadas y pago seguro."
+			},
 			"highlights": [
 				"Wordpress",
 				"WooCommerce",
@@ -391,7 +579,10 @@
 		{
 			"name": "LB-Art Design",
 			"isActive": true,
-			"description": "Sales of T-shirts and art-related sweatshirts and coveralls.",
+			"description": {
+				"en": "E-commerce store for custom t-shirts, sweatshirts, and art-related apparel with print-on-demand integration.",
+				"es": "Tienda de remeras, buzos y indumentaria artística personalizada con integración de impresión bajo demanda."
+			},
 			"highlights": [
 				"Wordpress",
 				"WooCommerce",
@@ -401,8 +592,11 @@
 		},
 		{
 			"name": "Parador Túristico Quimilí",
-			"isActive": true,
-			"description": "The ideal spot for travelers seeking comfort and comprehensive services, offering a wide range of amenities to meet their needs.",
+			"isActive": false,
+			"description": {
+				"en": "Tourist accommodation website with online booking, room management, and comprehensive service information for travelers.",
+				"es": "Sitio de alojamiento turístico con reserva online, gestión de habitaciones e información completa de servicios para viajeros."
+			},
 			"highlights": [
 				"Wordpress",
 				"Freelance"
@@ -412,7 +606,10 @@
 		{
 			"name": "Química Paso del Rey",
 			"isActive": true,
-			"description": "Sale of chemical cleaning products.",
+			"description": {
+				"en": "E-commerce store for chemical cleaning products, with product catalog, cart functionality, and order management.",
+				"es": "Tienda de productos de limpieza químicos, con catálogo de productos, carrito de compras y gestión de pedidos."
+			},
 			"highlights": [
 				"Wordpress",
 				"WooCommerce",
@@ -423,7 +620,10 @@
 		{
 			"name": "Silicon Access",
 			"isActive": true,
-			"description": "Developed a system for managing gated communities, including resident, visitor, and pet administration..",
+			"description": {
+				"en": "System for managing gated communities, including resident profiles, visitor logs, pet registration, and access control.",
+				"es": "Sistema para la gestión de barrios cerrados, incluyendo perfiles de residentes, registro de visitas, mascotas y control de acceso."
+			},
 			"highlights": [
 				"Django",
 				"Backoffice"
@@ -433,7 +633,10 @@
 		{
 			"name": "Tienda Mi Olivo",
 			"isActive": false,
-			"description": "Store selling regional products from all over Argentina.",
+			"description": {
+				"en": "E-commerce store selling regional products from all over Argentina.",
+				"es": "Tienda de productos regionales de toda la Argentina."
+			},
 			"highlights": [
 				"Wordpress",
 				"WooCommerce",
@@ -443,7 +646,10 @@
 		{
 			"name": "Wendrop",
 			"isActive": false,
-			"description": "Wendrop is a place to share free information, tools, and helpful resources in the world of NFT and cryptocurrencies.",
+			"description": {
+				"en": "Platform for sharing free information, tools, and resources in the world of NFT and cryptocurrencies.",
+				"es": "Plataforma para compartir información gratuita, herramientas y recursos en el mundo de NFT y criptomonedas."
+			},
 			"highlights": [
 				"Laravel",
 				"NFT",
@@ -454,7 +660,10 @@
 		{
 			"name": "***",
 			"isActive": false,
-			"description": "National system for managing case files, prosecutor's offices, and rulings.",
+			"description": {
+				"en": "National system for managing case files, prosecutor's offices, and rulings.",
+				"es": "Sistema nacional de gestión de expedientes, fiscalías y resoluciones."
+			},
 			"highlights": [
 				"Django",
 				"Celery",

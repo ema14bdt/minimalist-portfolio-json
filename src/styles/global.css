@@ -68,6 +68,15 @@ html {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Smooth language transition */
+[data-i18n] {
+  transition: opacity 0.2s ease;
+}
+
+.transitioning {
+  opacity: 0;
+}
+
 /* Common utility classes */
 .flex-center {
   display: flex;

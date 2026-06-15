@@ -1,6 +1,8 @@
 ---
 import { basics } from "@cv"
+import { getLangFromAstro } from "@/utils/i18n"
 
+const currentLang = getLangFromAstro(Astro)
 const { profiles } = basics
 
 const SOCIAL_ICONS: Record<string, string> = {
@@ -55,17 +57,102 @@ const profilesInfo = profiles.map(({ network, url }) => {
 })
 ---
 
-<footer class="no-print">
-  Press <kbd id="keyboard-key"></kbd> + <kbd>K</kbd> to open the command menu.
+<footer class="no-print keyboard-footer" data-i18n="keyboard.footer" set:html={currentLang === 'es' ? 'Presiona <kbd id="keyboard-key"></kbd> + <kbd>K</kbd> para abrir el menú de comandos.' : 'Press <kbd id="keyboard-key"></kbd> + <kbd>K</kbd> to open the command menu.'}>
 </footer>
 
 <ninja-keys
   data-info={JSON.stringify(profilesInfo)}
+  data-icons={JSON.stringify(SOCIAL_ICONS)}
+  data-profiles={JSON.stringify(profiles)}
   hideBreadcrumbs>
 </ninja-keys>
 
 <script>
   import "ninja-keys"
+
+  const footerTexts: Record<string, string> = {
+    en: 'Press <kbd id="keyboard-key"></kbd> + <kbd>K</kbd> to open the command menu.',
+    es: 'Presiona <kbd id="keyboard-key"></kbd> + <kbd>K</kbd> para abrir el menú de comandos.'
+  }
+
+  const placeholders: Record<string, string> = {
+    en: 'Type a command or search...',
+    es: 'Escribe un comando o busca...'
+  }
+
+  const ninjaFooterTexts: Record<string, { select: string; navigate: string; close: string; back: string }> = {
+    en: { select: 'to select', navigate: 'to navigate', close: 'to close', back: 'move to parent' },
+    es: { select: 'para seleccionar', navigate: 'para navegar', close: 'para cerrar', back: 'volver al padre' }
+  }
+
+  const ninjaLabels: Record<string, { visit: string; social: string }> = {
+    en: { visit: 'Visit', social: 'Social' },
+    es: { visit: 'Visitar', social: 'Social' }
+  }
+
+  function updateNinjaDarkMode() {
+    const ninja = document.querySelector("ninja-keys")
+    if (!ninja) return
+    
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+    if (isDark) {
+      ninja.classList.add('dark')
+    } else {
+      ninja.classList.remove('dark')
+    }
+  }
+
+  function updateNinjaLanguage() {
+    const lang = document.documentElement.getAttribute('lang') || 'es'
+    const ninja = document.querySelector("ninja-keys") as any
+    if (!ninja) return
+
+    ninja.placeholder = placeholders[lang] || placeholders.en
+
+    const labels = ninjaLabels[lang] || ninjaLabels.en
+    const icons = JSON.parse(ninja.getAttribute("data-icons") || "{}")
+    const profilesData = JSON.parse(ninja.getAttribute("data-profiles") || "[]")
+    const networks = ['LinkedIn', 'GitHub', 'CV']
+    
+    const updatedData = networks.map((network) => {
+      const firstLetter = network[0].toUpperCase()
+      const profile = profilesData.find((p: any) => p.network === network)
+      return {
+        id: network,
+        section: labels.social,
+        title: `${labels.visit} ${network}`,
+        url: profile?.url || '#',
+        icon: icons[network],
+        hotkey: `ctrl+${firstLetter}`,
+        handler: () => {
+          window.open(profile?.url, '_blank')
+        }
+      }
+    })
+    ninja.data = updatedData
+
+    const footerEl = ninja.shadowRoot?.querySelector('.modal-footer')
+    if (footerEl) {
+      const texts = ninjaFooterTexts[lang] || ninjaFooterTexts.en
+      const helps = footerEl.querySelectorAll('.help')
+      if (helps[0]) helps[0].innerHTML = helps[0].innerHTML.replace(/to select|para seleccionar/, texts.select)
+      if (helps[1]) helps[1].innerHTML = helps[1].innerHTML.replace(/to navigate|para navegar/, texts.navigate)
+      if (helps[2]) helps[2].innerHTML = helps[2].innerHTML.replace(/to close|para cerrar/, texts.close)
+      if (helps[3]) helps[3].style.display = 'none'
+    }
+  }
+
+  function updateKeyboardLanguage() {
+    const lang = document.documentElement.getAttribute('lang') || 'es'
+    const footerEl = document.querySelector('[data-i18n="keyboard.footer"]') as HTMLElement
+    if (footerEl) {
+      const keyboardKey = document.getElementById('keyboard-key')
+      const keyText = keyboardKey?.textContent || 'Ctrl'
+      footerEl.innerHTML = footerTexts[lang] || footerTexts.en
+      const newKey = document.getElementById('keyboard-key')
+      if (newKey) newKey.textContent = keyText
+    }
+  }
 
   const ninja = document.querySelector("ninja-keys")
 
@@ -99,13 +186,37 @@ const profilesInfo = profiles.map(({ network, url }) => {
     return "Unknown";
   }
 
-  // Asignar la tecla correcta según el sistema operativo
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     const keyboardKey = document.getElementById('keyboard-key');
     if (keyboardKey) {
       keyboardKey.textContent = getOS() === "Mac" ? 'Cmd' : 'Ctrl';
     }
+
+    if (isMobile()) {
+      const footer = document.querySelector('.keyboard-footer') as HTMLElement;
+      if (footer) footer.style.display = 'none';
+    }
+
+    updateNinjaDarkMode()
+    updateNinjaLanguage()
+    updateKeyboardLanguage()
   });
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'lang' || mutation.attributeName === 'data-theme') {
+        updateNinjaDarkMode()
+        updateNinjaLanguage()
+        updateKeyboardLanguage()
+      }
+    })
+  })
+  
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang', 'data-theme'] })
 </script>
 
 <style>
@@ -147,5 +258,44 @@ const profilesInfo = profiles.map(({ network, url }) => {
     border-radius: 4px;
     padding: 2px 4px;
     font-size: 12px;
+  }
+
+  ninja-keys {
+    --ninja-width: 640px;
+    --ninja-backdrop-filter: blur(4px);
+    --ninja-overflow-background: rgba(0, 0, 0, 0.6);
+    --ninja-text-color: var(--color-primary);
+    --ninja-modal-background: var(--color-surface);
+    --ninja-modal-shadow: 0 16px 70px rgba(0, 0, 0, 0.4);
+    --ninja-secondary-background-color: var(--color-border);
+    --ninja-secondary-text-color: var(--color-text);
+    --ninja-selected-background: var(--color-border-dark);
+    --ninja-selected-text-color: var(--color-primary);
+    --ninja-group-text-color: var(--color-tertiary);
+    --ninja-footer-background: var(--color-surface);
+    --ninja-icon-color: var(--color-text);
+    --ninja-separate-border: 1px solid var(--color-border);
+    --ninja-placeholder-color: var(--color-text);
+    --ninja-accent-color: var(--color-accent);
+  }
+
+  ninja-keys.dark {
+    --ninja-overflow-background: rgba(0, 0, 0, 0.7);
+    --ninja-modal-background: #1a1a1a;
+    --ninja-text-color: #e0e0e0;
+    --ninja-secondary-background-color: #333;
+    --ninja-secondary-text-color: #999;
+    --ninja-selected-background: #333;
+    --ninja-selected-text-color: #fff;
+    --ninja-footer-background: #111;
+    --ninja-icon-color: #999;
+    --ninja-separate-border: 1px solid #333;
+    --ninja-placeholder-color: #777;
+  }
+
+  @media (width <= 700px) {
+    footer {
+      display: none;
+    }
   }
 </style>

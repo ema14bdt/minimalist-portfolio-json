@@ -2,29 +2,32 @@
 import Section from '../Section.astro'
 
 import {projects} from '@cv'
+import { getLangFromAstro } from "@/utils/i18n"
+
+const currentLang = getLangFromAstro(Astro)
 ---
 
 <Section title='Projects'>
 	<ul>
 		{
-			projects.map(({url, description, highlights, name, isActive}) => {
+			projects.map(({url, description, highlights, name, isActive}, index) => {
 				return (
 					<li>
 						<article>
 							<header>
 								<h3>
-									{isActive ? (
-										<>
-											<a href={url} target='_blank'>
-												{name}
-											</a>
-											<span>•</span>
-										</>
-									) : (
-										<spanurl>{name}</spanurl>
-									)}
+								{isActive ? (
+									<>
+										<a href={url} target='_blank'>
+											{name}
+										</a>
+										<span class="dot">•</span>
+									</>
+								) : (
+									<span>{name}</span>
+								)}
 								</h3>
-								<p>{description}</p>
+								<p data-i18n={`projects[${index}].description`}>{description[currentLang as keyof typeof description] || description.en}</p>
 							</header>
 							<footer>
 								{highlights.map(highlight => {
@@ -38,6 +41,33 @@ import {projects} from '@cv'
 		}
 	</ul>
 </Section>
+
+<script>
+  import {projects} from '@cv'
+  
+  function updateProjectsLanguage() {
+    const lang = document.documentElement.getAttribute('lang') || 'es'
+    
+    projects.forEach((project, index) => {
+      const descEl = document.querySelector(`[data-i18n="projects[${index}].description"]`)
+      if (descEl && project.description) {
+        descEl.textContent = project.description[lang as keyof typeof project.description] || project.description.en
+      }
+    })
+  }
+
+  updateProjectsLanguage()
+  
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'lang') {
+        updateProjectsLanguage()
+      }
+    })
+  })
+  
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] })
+</script>
 
 <style>
 	ul {
@@ -79,7 +109,7 @@ import {projects} from '@cv'
 		margin-bottom: var(--spacing-xs);
 	}
 
-	article h3 span {
+	article h3 span.dot {
 		color: var(--color-accent);
 		animation-name: flicker;
 		animation-duration: 3s;

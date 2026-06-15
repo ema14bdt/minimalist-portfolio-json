@@ -1,0 +1,113 @@
+---
+---
+
+<button id="language-toggle" class="language-toggle no-print" aria-label="Toggle language">
+  <span class="lang-icon lang-en">
+    <span class="lang-text">EN</span>
+  </span>
+  <span class="lang-icon lang-es">
+    <span class="lang-text">ES</span>
+  </span>
+</button>
+
+<script>
+  const toggleButton = document.getElementById('language-toggle');
+  
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      const currentLang = document.documentElement.getAttribute('lang') || 'es';
+      const newLang = currentLang === 'es' ? 'en' : 'es';
+      
+      const main = document.querySelector('main');
+      if (main) {
+        main.style.transition = 'opacity 0.15s ease-in-out';
+        main.style.opacity = '0';
+        
+        setTimeout(() => {
+          document.documentElement.setAttribute('lang', newLang);
+          localStorage.setItem('lang', newLang);
+          document.cookie = `lang=${newLang};path=/;max-age=31536000`;
+          
+          main.style.opacity = '1';
+        }, 150);
+      } else {
+        document.documentElement.setAttribute('lang', newLang);
+        localStorage.setItem('lang', newLang);
+        document.cookie = `lang=${newLang};path=/;max-age=31536000`;
+      }
+    });
+  }
+</script>
+
+<style>
+  .language-toggle {
+    position: fixed;
+    top: 2rem;
+    right: 5rem;
+    background: var(--color-border);
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--radius-md);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-base);
+    z-index: 1000;
+    padding: 0;
+  }
+
+  .language-toggle:hover {
+    background: var(--color-border-dark);
+    transform: scale(1.05);
+  }
+
+  .language-toggle:active {
+    transform: scale(0.95);
+  }
+
+  .lang-icon {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+  }
+
+  .lang-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  :global([lang="en"]) .lang-icon.lang-en {
+    display: flex;
+  }
+
+  :global([lang="en"]) .lang-icon.lang-es {
+    display: none;
+  }
+
+  :global([lang="es"]) .lang-icon.lang-en {
+    display: none;
+  }
+
+  :global([lang="es"]) .lang-icon.lang-es {
+    display: flex;
+  }
+
+  @media (width <= 700px) {
+    .language-toggle {
+      top: 1rem;
+      right: 4.5rem;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  @media print {
+    .language-toggle {
+      display: none !important;
+    }
+  }
+</style>

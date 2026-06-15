@@ -3,15 +3,16 @@ import Section from "../Section.astro"
 
 import { work } from "@cv"
 import { monthYear } from "@/utils/utils.ts"
+import { getLangFromAstro } from "@/utils/i18n"
+
+const currentLang = getLangFromAstro(Astro)
 ---
 
 <Section title="Work Experience">
   <ul>
     {
       work.map(
-        ({ name, startDate, endDate, position, summary, url }) => {
-          const date = monthYear(startDate, endDate)
-          
+        ({ name, startDate, endDate, position, summary, url }, index) => {
           return (
             <li>
               <article>
@@ -20,14 +21,14 @@ import { monthYear } from "@/utils/utils.ts"
                     <h3>
                       <a class ="link-work" href={url} target="_blank">{name}</a>
                     </h3>
-                    <h4>{position}</h4>
+                    <h4 data-i18n={`work[${index}].position`}>{position[currentLang as keyof typeof position] || position.en}</h4>
                   </div>
 
-                  <time>{date}</time>
+                  <time data-i18n={`work[${index}].date`} data-start={startDate} data-end={endDate || ''}>{monthYear(startDate, endDate, currentLang)}</time>
                 </header>
 
                 <footer>
-                  <p>{summary}</p>
+                  <p data-i18n={`work[${index}].summary`}>{summary[currentLang as keyof typeof summary] || summary.en}</p>
                 </footer>
               </article>
             </li>
@@ -37,6 +38,46 @@ import { monthYear } from "@/utils/utils.ts"
     }
   </ul>
 </Section>
+
+<script>
+  import { work } from "@cv"
+  import { monthYear } from "@/utils/utils.ts"
+  
+  function updateExperienceLanguage() {
+    const lang = document.documentElement.getAttribute('lang') || 'es'
+    
+    work.forEach((item, index) => {
+      const positionEl = document.querySelector(`[data-i18n="work[${index}].position"]`)
+      if (positionEl && item.position) {
+        positionEl.textContent = item.position[lang as keyof typeof item.position] || item.position.en
+      }
+      
+      const summaryEl = document.querySelector(`[data-i18n="work[${index}].summary"]`)
+      if (summaryEl && item.summary) {
+        summaryEl.textContent = item.summary[lang as keyof typeof item.summary] || item.summary.en
+      }
+
+      const dateEl = document.querySelector(`[data-i18n="work[${index}].date"]`) as HTMLTimeElement
+      if (dateEl) {
+        const startDate = dateEl.dataset.start || ''
+        const endDate = dateEl.dataset.end || ''
+        dateEl.textContent = monthYear(startDate, endDate || null, lang)
+      }
+    })
+  }
+
+  updateExperienceLanguage()
+  
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'lang') {
+        updateExperienceLanguage()
+      }
+    })
+  })
+  
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] })
+</script>
 
 <style>
   ul {

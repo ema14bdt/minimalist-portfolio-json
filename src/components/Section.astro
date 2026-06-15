@@ -1,15 +1,60 @@
 ---
-// se ejecuta en el servidor o en build time <----
-const { title } = Astro.props
+import { getLangFromAstro } from "@/utils/i18n"
+const { title, titleKey } = Astro.props
+const currentLang = getLangFromAstro(Astro)
+
+const sectionTitles: Record<string, Record<string, string>> = {
+  'About': { en: 'About', es: 'Sobre mí' },
+  'Work Experience': { en: 'Work Experience', es: 'Experiencia Laboral' },
+  'Education': { en: 'Education', es: 'Educación' },
+  'Skills': { en: 'Skills', es: 'Habilidades' },
+  'Projects': { en: 'Projects', es: 'Proyectos' },
+  'Certificates': { en: 'Certificates', es: 'Certificados' }
+}
+
+const key = titleKey || title
+const initialTitle = key && sectionTitles[key] ? (sectionTitles[key][currentLang] || sectionTitles[key].en) : title
 ---
 
 <section>
-  {title && <h2>{title}</h2>}
+  {title && <h2 data-i18n-title={key}>{initialTitle}</h2>}
   <slot />
 </section>
 
 <script>
-  // se ejecuta en el cliente <----
+  const sectionTitles: Record<string, Record<string, string>> = {
+    'About': { en: 'About', es: 'Sobre mí' },
+    'Work Experience': { en: 'Work Experience', es: 'Experiencia Laboral' },
+    'Education': { en: 'Education', es: 'Educación' },
+    'Skills': { en: 'Skills', es: 'Habilidades' },
+    'Projects': { en: 'Projects', es: 'Proyectos' },
+    'Certificates': { en: 'Certificates', es: 'Certificados' }
+  }
+
+  function updateSectionTitles() {
+    const lang = document.documentElement.getAttribute('lang') || 'es'
+    const titles = document.querySelectorAll('[data-i18n-title]')
+    
+    titles.forEach((el) => {
+      const key = el.getAttribute('data-i18n-title') || ''
+      const translation = sectionTitles[key]
+      if (translation) {
+        el.textContent = translation[lang] || translation.en
+      }
+    })
+  }
+
+  updateSectionTitles()
+  
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'lang') {
+        updateSectionTitles()
+      }
+    })
+  })
+  
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] })
 </script>
 
 <style>

@@ -2,8 +2,10 @@
 import Section from "../Section.astro"
 
 import { certificates } from "@cv"
-
 import { month } from "@/utils/utils.ts"
+import { getLangFromAstro } from "@/utils/i18n"
+
+const currentLang = getLangFromAstro(Astro)
 
 const firstThreeCertificates = certificates.slice(0, 3)
 const extraCertificates = certificates.slice(3)
@@ -12,18 +14,17 @@ const extraCertificates = certificates.slice(3)
 <Section title="Certificates">
   <ul>
     {
-      firstThreeCertificates.map(({ name, date, issuer, url }) => {
-        const dateCertificate = month(date);
+      firstThreeCertificates.map(({ name, date, issuer, url }, index) => {
         return (
           <li>
             <article>
               <header>
                 <div>
                   <h4>
-                    <a class="link-certificate" href={url} target="_blank">{name}</a>
+                    <a class="link-certificate" href={url} target="_blank" data-i18n={`certificates[${index}].name`}>{name[currentLang as keyof typeof name] || name.en}</a>
                   </h4>
                 </div>
-                <time>{dateCertificate}</time>
+                <time data-i18n={`certificates[${index}].date`} data-date={date}>{month(date, currentLang)}</time>
               </header>
               <footer>
                 <p>{issuer}</p>
@@ -37,18 +38,18 @@ const extraCertificates = certificates.slice(3)
 
   <ul id="extra-certificates" class="hidden">
     {
-      extraCertificates.map(({ name, date, issuer, url }) => {
-        const dateCertificate = month(date);
+      extraCertificates.map(({ name, date, issuer, url }, index) => {
+        const realIndex = index + 3;
         return (
           <li>
             <article>
               <header>
                 <div>
                   <h4>
-                    <a class="link-certificate" href={url} target="_blank">{name}</a>
+                    <a class="link-certificate" href={url} target="_blank" data-i18n={`certificates[${realIndex}].name`}>{name[currentLang as keyof typeof name] || name.en}</a>
                   </h4>
                 </div>
-                <time>{dateCertificate}</time>
+                <time data-i18n={`certificates[${realIndex}].date`} data-date={date}>{month(date, currentLang)}</time>
               </header>
               <footer>
                 <p>{issuer}</p>
@@ -61,26 +62,77 @@ const extraCertificates = certificates.slice(3)
   </ul>
 
   <button id="button-more">
-    <p class="more">+{extraCertificates.length} more</p>
+    <p class="more" data-i18n="certificates.more">+{extraCertificates.length} {currentLang === 'es' ? 'más' : 'more'}</p>
   </button>
 
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const buttonMore = document.getElementById('button-more');
-      const extraCertificates = document.getElementById('extra-certificates');
-      const moreText = buttonMore?.querySelector('.more');
+    import { certificates } from "@cv"
+    import { month } from "@/utils/utils.ts"
+    
+    const moreTexts: Record<string, { more: string; less: string }> = {
+      en: { more: 'more', less: 'less' },
+      es: { more: 'más', less: 'menos' }
+    }
 
-      if (buttonMore && extraCertificates && moreText) {
-        buttonMore.addEventListener('click', () => {
-          extraCertificates.classList.toggle('hidden');
+    let isExpanded = false
 
-          moreText.textContent = extraCertificates.classList.contains('hidden')
-            ? `+${extraCertificates.children.length} more`
-            : '- less';
-        });
+    function updateCertificatesLanguage() {
+      const lang = document.documentElement.getAttribute('lang') || 'es'
+      
+      certificates.forEach((cert, index) => {
+        const nameEl = document.querySelector(`[data-i18n="certificates[${index}].name"]`)
+        if (nameEl && cert.name) {
+          nameEl.textContent = cert.name[lang as keyof typeof cert.name] || cert.name.en
+        }
+
+        const dateEl = document.querySelector(`[data-i18n="certificates[${index}].date"]`) as HTMLTimeElement
+        if (dateEl) {
+          const date = dateEl.dataset.date || ''
+          dateEl.textContent = month(date, lang)
+        }
+      })
+
+      const moreEl = document.querySelector('[data-i18n="certificates.more"]')
+      if (moreEl) {
+        const extraCerts = document.getElementById('extra-certificates')
+        const count = extraCerts ? extraCerts.children.length : 0
+        const texts = moreTexts[lang] || moreTexts.en
+        moreEl.textContent = isExpanded
+          ? `- ${texts.less}`
+          : `+${count} ${texts.more}`
       }
-    });
+    }
+
+    updateCertificatesLanguage()
+    
+    const buttonMore = document.getElementById('button-more');
+    const extraCertificates = document.getElementById('extra-certificates');
+    const moreEl = document.querySelector('[data-i18n="certificates.more"]');
+
+    if (buttonMore && extraCertificates && moreEl) {
+      buttonMore.addEventListener('click', () => {
+        extraCertificates.classList.toggle('hidden');
+        isExpanded = !extraCertificates.classList.contains('hidden')
+        
+        const lang = document.documentElement.getAttribute('lang') || 'es'
+        const texts = moreTexts[lang] || moreTexts.en
+        const count = extraCertificates.children.length
+        moreEl.textContent = isExpanded
+          ? `- ${texts.less}`
+          : `+${count} ${texts.more}`
+      });
+    }
+    
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'lang') {
+          updateCertificatesLanguage()
+        }
+      })
+    })
+    
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] })
   </script>
 </Section>
 

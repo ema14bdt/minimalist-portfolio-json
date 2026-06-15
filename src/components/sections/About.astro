@@ -2,11 +2,35 @@
 import Section from "../Section.astro"
 
 import { basics } from "@cv"
+import { getLangFromAstro } from "@/utils/i18n"
+const currentLang = getLangFromAstro(Astro)
 const { summary } = basics
 ---
 
 <Section title="About">
-  <p>
-    {summary}
-  </p>
+  <p data-i18n="basics.summary">{summary[currentLang as keyof typeof summary] || summary.en}</p>
 </Section>
+
+<script>
+  import { basics } from "@cv"
+  
+  function updateAboutLanguage() {
+    const lang = document.documentElement.getAttribute('lang') || 'es'
+    const summaryEl = document.querySelector('[data-i18n="basics.summary"]')
+    if (summaryEl && basics.summary) {
+      summaryEl.textContent = basics.summary[lang as keyof typeof basics.summary] || basics.summary.en
+    }
+  }
+
+  updateAboutLanguage()
+  
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'lang') {
+        updateAboutLanguage()
+      }
+    })
+  })
+  
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] })
+</script>

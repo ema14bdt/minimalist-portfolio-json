@@ -1,18 +1,26 @@
-const months = [
-    "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
-];
+const months: Record<string, string[]> = {
+    en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    es: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+};
 
-export function monthYear(startDate: string, endDate: string | null) {
+const presentText: Record<string, string> = {
+    en: "Present",
+    es: "Presente"
+};
+
+export function monthYear(startDate: string, endDate: string | null, lang: string = 'es') {
     const [startYear, startMonth] = startDate.split('-');
-    const [endYear, endMonth] = endDate ? endDate.split('-') : ['Present', ''];
+    const [endYear, endMonth] = endDate ? endDate.split('-') : ['', ''];
 
-    const start = `${startYear} ${months[parseInt(startMonth) - 1]}`;
-    const end = endDate ? `${endYear} ${months[parseInt(endMonth) - 1]}` : 'Present';
+    const monthList = months[lang] || months.en;
+    const start = `${monthList[parseInt(startMonth) - 1]} ${startYear}`;
+    const end = endDate ? `${monthList[parseInt(endMonth) - 1]} ${endYear}` : presentText[lang] || presentText.en;
 
     return `${start} - ${end}`;
 }
 
-export function month(date: string) {
+export function month(date: string, lang: string = 'es') {
     const [year, month] = date.split('-');
-    return `${year} ${months[parseInt(month) - 1]}`;
+    const monthList = months[lang] || months.en;
+    return `${monthList[parseInt(month) - 1]} ${year}`;
 }
