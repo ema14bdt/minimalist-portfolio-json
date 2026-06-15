@@ -2,7 +2,7 @@
 import Section from "../Section.astro"
 
 import { education } from "@cv"
-import { monthYear } from "@/utils/utils.ts"
+import { monthYear, shortMonthYear } from "@/utils/utils.ts"
 import { getLangFromAstro } from "@/utils/i18n"
 
 const currentLang = getLangFromAstro(Astro)
@@ -23,7 +23,10 @@ const currentLang = getLangFromAstro(Astro)
                     </h3>
                     <h4 data-i18n={`education[${index}].area`}>{area[currentLang as keyof typeof area] || area.en}</h4>
                   </div>
-                  <time data-i18n={`education[${index}].date`} data-start={startDate} data-end={endDate || ''}>{monthYear(startDate, endDate, currentLang)}</time>
+                  <time data-start={startDate} data-end={endDate || ''}>
+                    <span class="date-desktop" data-i18n={`education[${index}].date`}>{monthYear(startDate, endDate, currentLang)}</span>
+                    <span class="date-mobile" data-i18n={`education[${index}].dateShort`}>{shortMonthYear(startDate, endDate, currentLang)}</span>
+                  </time>
                 </header>
                 <footer>
                   <p data-i18n={`education[${index}].studyType`}>{studyType[currentLang as keyof typeof studyType] || studyType.en}</p>
@@ -39,7 +42,7 @@ const currentLang = getLangFromAstro(Astro)
 
 <script>
   import { education } from "@cv"
-  import { monthYear } from "@/utils/utils.ts"
+  import { monthYear, shortMonthYear } from "@/utils/utils.ts"
   
   function updateEducationLanguage() {
     const lang = document.documentElement.getAttribute('lang') || 'es'
@@ -55,11 +58,15 @@ const currentLang = getLangFromAstro(Astro)
         studyTypeEl.textContent = item.studyType[lang as keyof typeof item.studyType] || item.studyType.en
       }
 
-      const dateEl = document.querySelector(`[data-i18n="education[${index}].date"]`) as HTMLTimeElement
-      if (dateEl) {
-        const startDate = dateEl.dataset.start || ''
-        const endDate = dateEl.dataset.end || ''
-        dateEl.textContent = monthYear(startDate, endDate || null, lang)
+      const dateEl = document.querySelector(`[data-i18n="education[${index}].date"]`) as HTMLSpanElement
+      const dateShortEl = document.querySelector(`[data-i18n="education[${index}].dateShort"]`) as HTMLSpanElement
+      
+      const parentTime = (dateEl || dateShortEl)?.parentElement
+      if (parentTime) {
+        const startDate = parentTime.dataset.start || ''
+        const endDate = parentTime.dataset.end || ''
+        if (dateEl) dateEl.textContent = monthYear(startDate, endDate || null, lang)
+        if (dateShortEl) dateShortEl.textContent = shortMonthYear(startDate, endDate || null, lang)
       }
     })
   }
@@ -106,7 +113,7 @@ const currentLang = getLangFromAstro(Astro)
   header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: baseline;
     margin-bottom: var(--spacing-xs);
   }
 
@@ -114,5 +121,20 @@ const currentLang = getLangFromAstro(Astro)
     color: var(--color-text);
     font-size: var(--font-size-lg);
     text-align: end;
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  .date-mobile {
+    display: none;
+  }
+
+  @media (width <= 700px) {
+    .date-desktop {
+      display: none;
+    }
+    .date-mobile {
+      display: inline;
+    }
   }
 </style>

@@ -2,7 +2,7 @@
 import Section from "../Section.astro"
 
 import { certificates } from "@cv"
-import { month } from "@/utils/utils.ts"
+import { month, shortMonth } from "@/utils/utils.ts"
 import { getLangFromAstro } from "@/utils/i18n"
 
 const currentLang = getLangFromAstro(Astro)
@@ -24,7 +24,10 @@ const extraCertificates = certificates.slice(3)
                     <a class="link-certificate" href={url} target="_blank" data-i18n={`certificates[${index}].name`}>{name[currentLang as keyof typeof name] || name.en}</a>
                   </h4>
                 </div>
-                <time data-i18n={`certificates[${index}].date`} data-date={date}>{month(date, currentLang)}</time>
+                <time data-date={date}>
+                  <span class="date-desktop" data-i18n={`certificates[${index}].date`}>{month(date, currentLang)}</span>
+                  <span class="date-mobile" data-i18n={`certificates[${index}].dateShort`}>{shortMonth(date, currentLang)}</span>
+                </time>
               </header>
               <footer>
                 <p>{issuer}</p>
@@ -49,7 +52,10 @@ const extraCertificates = certificates.slice(3)
                     <a class="link-certificate" href={url} target="_blank" data-i18n={`certificates[${realIndex}].name`}>{name[currentLang as keyof typeof name] || name.en}</a>
                   </h4>
                 </div>
-                <time data-i18n={`certificates[${realIndex}].date`} data-date={date}>{month(date, currentLang)}</time>
+                <time data-date={date}>
+                  <span class="date-desktop" data-i18n={`certificates[${realIndex}].date`}>{month(date, currentLang)}</span>
+                  <span class="date-mobile" data-i18n={`certificates[${realIndex}].dateShort`}>{shortMonth(date, currentLang)}</span>
+                </time>
               </header>
               <footer>
                 <p>{issuer}</p>
@@ -68,7 +74,7 @@ const extraCertificates = certificates.slice(3)
 
   <script>
     import { certificates } from "@cv"
-    import { month } from "@/utils/utils.ts"
+    import { month, shortMonth } from "@/utils/utils.ts"
     
     const moreTexts: Record<string, { more: string; less: string }> = {
       en: { more: 'more', less: 'less' },
@@ -86,10 +92,14 @@ const extraCertificates = certificates.slice(3)
           nameEl.textContent = cert.name[lang as keyof typeof cert.name] || cert.name.en
         }
 
-        const dateEl = document.querySelector(`[data-i18n="certificates[${index}].date"]`) as HTMLTimeElement
-        if (dateEl) {
-          const date = dateEl.dataset.date || ''
-          dateEl.textContent = month(date, lang)
+        const dateEl = document.querySelector(`[data-i18n="certificates[${index}].date"]`) as HTMLSpanElement
+        const dateShortEl = document.querySelector(`[data-i18n="certificates[${index}].dateShort"]`) as HTMLSpanElement
+        
+        const parentTime = (dateEl || dateShortEl)?.parentElement
+        if (parentTime) {
+          const date = parentTime.dataset.date || ''
+          if (dateEl) dateEl.textContent = month(date, lang)
+          if (dateShortEl) dateShortEl.textContent = shortMonth(date, lang)
         }
       })
 
@@ -107,20 +117,44 @@ const extraCertificates = certificates.slice(3)
     updateCertificatesLanguage()
     
     const buttonMore = document.getElementById('button-more');
-    const extraCertificates = document.getElementById('extra-certificates');
-    const moreEl = document.querySelector('[data-i18n="certificates.more"]');
+    const extraCertificates = document.getElementById('extra-certificates') as HTMLElement;
+    const moreEl = document.querySelector('[data-i18n="certificates.more"]') as HTMLElement;
 
     if (buttonMore && extraCertificates && moreEl) {
       buttonMore.addEventListener('click', () => {
-        extraCertificates.classList.toggle('hidden');
-        isExpanded = !extraCertificates.classList.contains('hidden')
-        
-        const lang = document.documentElement.getAttribute('lang') || 'es'
-        const texts = moreTexts[lang] || moreTexts.en
-        const count = extraCertificates.children.length
-        moreEl.textContent = isExpanded
-          ? `- ${texts.less}`
-          : `+${count} ${texts.more}`
+        moreEl.style.transition = 'opacity 0.15s ease-in-out';
+        moreEl.style.opacity = '0';
+
+        if (isExpanded) {
+          extraCertificates.style.transition = 'opacity 0.15s ease-in-out';
+          extraCertificates.style.opacity = '0';
+          
+          setTimeout(() => {
+            extraCertificates.classList.add('hidden');
+            isExpanded = false;
+            
+            const lang = document.documentElement.getAttribute('lang') || 'es';
+            const texts = moreTexts[lang] || moreTexts.en;
+            moreEl.textContent = `+${extraCertificates.children.length} ${texts.more}`;
+            moreEl.style.opacity = '1';
+          }, 150);
+        } else {
+          setTimeout(() => {
+            extraCertificates.classList.remove('hidden');
+            isExpanded = true;
+            
+            extraCertificates.style.opacity = '0';
+            extraCertificates.style.transition = 'opacity 0.15s ease-in-out';
+            extraCertificates.offsetHeight;
+            
+            const lang = document.documentElement.getAttribute('lang') || 'es';
+            const texts = moreTexts[lang] || moreTexts.en;
+            moreEl.textContent = `- ${texts.less}`;
+            
+            moreEl.style.opacity = '1';
+            extraCertificates.style.opacity = '1';
+          }, 150);
+        }
       });
     }
     
@@ -171,7 +205,7 @@ const extraCertificates = certificates.slice(3)
   header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: baseline;
     margin-bottom: var(--spacing-xs);
   }
 
@@ -179,6 +213,21 @@ const extraCertificates = certificates.slice(3)
     color: var(--color-text);
     font-size: var(--font-size-lg);
     text-align: end;
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  .date-mobile {
+    display: none;
+  }
+
+  @media (width <= 700px) {
+    .date-desktop {
+      display: none;
+    }
+    .date-mobile {
+      display: inline;
+    }
   }
 
   .hidden {
