@@ -1,7 +1,9 @@
 ---
+import Globe from "@/icons/Globe.astro"
 ---
 
 <button id="language-toggle" class="language-toggle no-print" aria-label="Toggle language">
+  <span class="globe-icon"><Globe /></span>
   <span class="lang-icon lang-en">
     <span class="lang-text">EN</span>
   </span>
@@ -47,15 +49,15 @@
     background: var(--color-border);
     border: 1px solid var(--color-border-dark);
     border-radius: var(--radius-md);
-    width: 40px;
     height: 40px;
+    padding: 0 12px;
+    gap: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: var(--transition-base);
     z-index: 1000;
-    padding: 0;
   }
 
   .language-toggle:hover {
@@ -72,6 +74,18 @@
     align-items: center;
     justify-content: center;
     color: var(--color-text);
+  }
+
+  .globe-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+  }
+
+  .globe-icon :global(svg) {
+    width: 16px;
+    height: 16px;
   }
 
   .lang-text {
@@ -100,8 +114,8 @@
     .language-toggle {
       top: 1rem;
       right: 4.5rem;
-      width: 36px;
       height: 36px;
+      padding: 0 10px;
     }
   }
 
