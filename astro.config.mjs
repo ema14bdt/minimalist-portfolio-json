@@ -7,4 +7,9 @@ export default defineConfig({
   adapter: vercel({
     webAnalytics: { enabled: true }
   }),
+  vite: {
+    optimizeDeps: {
+      include: ['ninja-keys']
+    }
+  }
 });
